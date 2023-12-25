@@ -1,0 +1,134 @@
+# Reference: https://squidfunk.github.io/mkdocs-material/reference/
+site_name: "2023 SANS HHC Write-Up"
+site_author: Thomas X M
+site_url:
+theme:
+  icon:
+    # Material for MkDocs bundles several icon sets:
+    # - Material Design (https://materialdesignicons.com/)
+    # - FontAwesome (https://fontawesome.com/search?m=free)
+    # - Octicons (https://octicons.github.com/)
+    # - Simple Icons (https://simpleicons.org/)
+    # Below are some suitable logo examples: 
+    # logo: fontawesome/regular/snowflake
+    logo: fontawesome/solid/sleigh
+    # logo: fontawesome/solid/candy-cane
+    # logo: fontawesome/solid/tree
+  name: material
+  favicon: img/misc/favicon.ico
+  features:
+    - toc.integrate
+    - content.code.copy
+    - navigation.sections
+    #- navigation.instant
+    #- navigation.top
+    #- navigation.tabs
+    #- navigation.tabs.sticky
+    #- navigation.expand
+    #- navigation.top
+    #- navigation.prune
+    #- toc.follow
+  palette:
+    # Material for MkDocs supports a light (default) and dark (slate) theme.
+    # Each mode supports configurable primary and accent colors.
+    # https://squidfunk.github.io/mkdocs-material/setup/changing-the-colors/
+    # Primary colors:
+    # red, pink, purple, deep purple, indigo, blue, light blue, cyan, teal,
+    # green, light green, lime, yellow, amber, orange, deep orange, brown,
+    # grey, blue grey, black, and white.
+    # Accent colors:
+    # red, pink, purple, deep purple, indigo, blue, light blue, cyan, teal,
+    # green, light green, lime, yellow, amber, orange, and deep orange.
+    # Palette toggle for light mode
+    - scheme: default
+      primary: teal
+      accent: teal
+      toggle:
+        icon: material/weather-night 
+        name: Switch to dark mode
+    # Palette toggle for dark mode
+    - scheme: slate
+      primary: teal
+      accent: teal
+      toggle:
+        icon: material/weather-sunny
+        name: Switch to light mode
+extra:
+  social:
+    - icon: fontawesome/brands/twitter
+      link: https://twitter.com/classified
+      name: Twitter
+    - icon: fontawesome/brands/github
+      link: https://github.com/classified
+      name: GitHub
+    - icon: fontawesome/brands/instagram
+      link: https://www.instagram.com/classified
+      name: Instagram
+extra_css:
+  - css/extra.css
+extra_javascript:
+  - https://cdnjs.cloudflare.com/ajax/libs/tablesort/5.2.1/tablesort.min.js
+  - js/tablesort.js
+markdown_extensions:
+  - abbr
+  - attr_list
+  - admonition
+  - meta
+  - footnotes
+  - def_list
+  - toc:
+      permalink: ⚓︎
+      toc_depth: 2
+  - pymdownx.details
+  - pymdownx.keys
+  - pymdownx.details
+  - pymdownx.tabbed:
+      alternate_style: true
+  - pymdownx.superfences:
+      custom_fences:
+        - name: mermaid
+          class: mermaid
+          format: !!python/name:pymdownx.superfences.fence_code_format
+  - pymdownx.highlight
+  - pymdownx.inlinehilite
+  - pymdownx.snippets
+  - pymdownx.emoji:
+      emoji_index: !!python/name:material.extensions.emoji.twemoji
+      emoji_generator: !!python/name:material.extensions.emoji.to_svg
+  - pymdownx.tasklist:
+      custom_checkbox: true
+nav:
+# The 'nav' section defines the content of the sidebar navigation.
+- Welcome: 'index.md'
+- Objectives:
+  - Introduction:
+    - KringleCon Orientation: 'objectives/o1.md'
+  - Christmas Island:
+    - Snowball Fight: 'objectives/o2.md'
+    - Linux 101: 'objectives/o3.md'
+    - Reportinator: 'objectives/o4.md'
+    - Azure 101: 'objectives/o5.md'
+  - Island of Misfit Toys:
+    - Luggage Lock: 'objectives/o6.md'
+    - Linux PrivEsc: 'objectives/o7.md'
+    - Game Cartridges Vol 1: 'objectives/o8.md'
+    - Hashcat: 'objectives/o9.md'
+  - Film Noir Island:
+    - Na'an: 'objectives/o10.md'
+    - KQL Kraken Hunt: 'objectives/o11.md'
+    - Phish Detection Agency: 'objectives/o12.md'
+  - Pixel Island:
+    - Elf Hunt: 'objectives/o13.md'
+    - Game Cartridges Vol 2: 'objectives/o14.md'
+    - Certificate SSHenanigans: 'objectives/o15.md'
+  - Steampunk Island:
+    - Faster Lock Combination: 'objectives/o16.md'
+    - Game Cartridges Vol 3: 'objectives/o17.md'
+    - The Captain's Comms: 'objectives/o18.md'
+    - Active Directory: 'objectives/o19.md'
+  - Space Island:
+    - Space Island Door Access Speaker: 'objectives/o20.md'
+    - Camera Access: 'objectives/o21.md'
+    - Missile Diversion: 'objectives/o22.md'
+- Extras:
+  - easter_eggs: 'easter_eggs.md'
