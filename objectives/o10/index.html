@@ -1308,14 +1308,14 @@
 <h2 id="solution">Solution<a class="headerlink" href="#solution" title="Permanent link">⚓︎</a></h2>
 <p>Check this article out: 
 https://www.tenable.com/blog/python-nan-injection</p>
+<p>If we open the developer tool, under nannannannannannan.com/js/game.js, we can observe the card play's Java code. </p>
 <p>The aim of this challenge is to win the card game, you need to pick 5 unique cards numbering from 0-9. Whoever picks the lowesr and highest numbers gets a point for each. Same numbers canceled out. First on to 10 points wins. The trick here is put to NAN number in the first place, then 0, 9, as you like. The NAN will be picked up first. </p>
+<p><img alt="Solution 1" src="../../img/objectives/o10/nan5.png" /></p>
 <p>Another way to win this is to use Burp to change the parameters like so: </p>
-<p><img alt="Solution" src="../../img/objectives/o10/nan1.png" />
-<img alt="Solution" src="../../img/objectives/o10/nan2.png" />
-<img alt="Solution" src="../../img/objectives/o10/nan3.png" />
-<img alt="Solution" src="../../img/objectives/o10/nan4.png" /></p>
-<h3 id="images">Images<a class="headerlink" href="#images" title="Permanent link">⚓︎</a></h3>
-<p><img alt="Terminal output" src="../../img/objectives/o10/nan5.png" /></p>
+<p><img alt="Solution" src="../../img/objectives/o10/nan.png" /></p>
+<p>You can see from above pic that the maximum card and minimum card are both NAN.</p>
+<p>You can change all the numbers in your code to NAN, which esentially bypassed the rule of unique number - you can't choose one number for two cards in one round. NAN devide. </p>
+<p>The server is using Python to host this game, interesting...</p>
 <div class="admonition success">
 <p class="admonition-title">Answer</p>
 <p>NAN</p>
