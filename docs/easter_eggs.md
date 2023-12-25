@@ -39,6 +39,17 @@
 
 ## Solution
 
+Well, first thing first, where is Jason? 
+
+![Fishing](../img/misc/jason.png)
+
+
+??? question "Jason"
+    Hi, I'm Jason!
+    I'm not dead. 
+    I'm just soaking up the sun's gnarly vibes, bro!
+
+
 User your "three" buttons (Cast Line --> Reel it in --> Reel it in turn red --> Reel it in) to manually fishing 20 fishes, and report back to Poinsettia McMittens to get your 
 fishing mastery challenge! 
 
