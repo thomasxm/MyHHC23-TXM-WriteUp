@@ -1314,12 +1314,73 @@ You can use <code>&lt;br/&gt;</code> to ensure each sentence starts on a new lin
 </details>
 <h2 id="solution">Solution<a class="headerlink" href="#solution" title="Permanent link">⚓︎</a></h2>
 <p>You can find the cartridge at: </p>
-<p><img alt="Terminal output" src="../../img/objectives/o17/gameboy3.png" /></p>
-<p>Two ways to go about this challenge. </p>
-<p>First we can pay attention to the NPC’s dialogues. We collect 399 coins and jump to the right place to win. There is a cheat to this game which we can use backspace (delete) key to rewind the time. It will give us room for errors and re-do the jumping. The second way to win is to use a debugger (BGB, Gihdra) to change the hex and “change” our coin balance to 999 without overflow. The 0XFE = 254 in decimal. </p>
+<p><img alt="Terminal output" src="../../img/objectives/o17/gameboy3.png" />  </p>
+<p>There are 3 possible ways to go about this challenge. You will need a local emulator to solve it the hard way. I used the mGBA for MAC: </p>
+<div class="highlight"><pre><span></span><code>https://mgba.io/
+</code></pre></div>
+<p>First we can pay attention to the NPC’s dialogues. We collect 399 coins and jump to the right place to win. There is a cheat to this game which we can use backspace (delete) key to rewind the time. It will give us room for errors and re-do the jumping. The second way to win is to use a debugger (BGB, Gihdra) to change the hex and “change” our coin balance to 999 without overflow. </p>
+<p>The game can be saved, so everytime we saved the game, the value stored is changed, if we can locate that value, we can manipulate it to be 999. </p>
 <p><img alt="Terminal output" src="../../img/objectives/o17/399.png" /></p>
+<p>The error message ERROR 0XFE is a hint. </p>
+<p>If we are patient enough, and change our values from 0 to 9 for each place value, we can observe a nice pattern as shown in Table below: </p>
+<h3 id="tables-in-gamesav">Tables in game.sav<a class="headerlink" href="#tables-in-gamesav" title="Permanent link">⚓︎</a></h3>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Base-10</th>
+<th style="text-align: left;">Base-16</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">1</td>
+<td style="text-align: left;">C7</td>
+</tr>
+<tr>
+<td style="text-align: left;">2</td>
+<td style="text-align: left;">2D</td>
+</tr>
+<tr>
+<td style="text-align: left;">3</td>
+<td style="text-align: left;">79</td>
+</tr>
+<tr>
+<td style="text-align: left;">4</td>
+<td style="text-align: left;">FC</td>
+</tr>
+<tr>
+<td style="text-align: left;">5</td>
+<td style="text-align: left;">5D</td>
+</tr>
+<tr>
+<td style="text-align: left;">6</td>
+<td style="text-align: left;">19</td>
+</tr>
+<tr>
+<td style="text-align: left;">7</td>
+<td style="text-align: left;">39</td>
+</tr>
+<tr>
+<td style="text-align: left;">8</td>
+<td style="text-align: left;">77</td>
+</tr>
+<tr>
+<td style="text-align: left;">9</td>
+<td style="text-align: left;">FE</td>
+</tr>
+</tbody>
+</table>
+<p>I used <code>vbindiff</code> to map out different patterns between two .sav files and found the following:</p>
+<p><img alt="Terminal output" src="../../img/objectives/o17/gameboy_digits.png" /></p>
+<p>As indicated, if we change the 1th, 10th, and 100th place holders to <code>0xFE</code> and reload the game with this game.sav data then speak to the T-wiz next to your birth place to restore your coins, you will get 999. Then you only need to play it through the game and make the big jump to win. </p>
+<p>As an interesting point, you can see that each place value has been surrounded by different box colours. You can potentially determine which value you have saved from the hex values (base-16) without converting them to decimal (base-10).</p>
+<p>There are 27 places to store those digits, equating to three times nine. They act as placeholders for the 1st, 10th, and 100th values.</p>
+<p>When you changed the 3 FE values and load the game ROM with your .sav data, you would see 999 like picture below: </p>
+<p><img alt="Terminal output" src="../../img/objectives/o17/999.png" /></p>
+<p>There maybe a 3rd way to solve this challenge as we can observe the header values in ROM: </p>
+<p><img alt="Terminal output" src="../../img/objectives/o17/hxd.png" /></p>
 <p>The flag is: !tom+elf!
-Why am I not suprisied。 </p>
+Why am I not suprisied. </p>
 <h3 id="images">Images<a class="headerlink" href="#images" title="Permanent link">⚓︎</a></h3>
 <p><img alt="Terminal output" src="../../img/objectives/o17/solved.png" /></p>
 <h2 id="response">Response<a class="headerlink" href="#response" title="Permanent link">⚓︎</a></h2>
