@@ -109,11 +109,14 @@ if __name__ == "__main__":
     print("Composite image saved as:", composite_image_path)
 
 ```
+
+Heat maps with brighter spots are the places you want to catch a particular fish. If you overlay two maps together, the bright spots remain are the places where you can catch both types of fish. 
+
 We get the one fish: 
 
 ![Terminal 111](../img/misc/composite.png)
 
-The fishes habitats: 
+The fish habitats! The maps below are overlay of all 171 heat maps for 171 fishes.  
 
 ![Terminal 111](../img/misc/composite1.png)
 ![Terminal 111](../img/misc/composite_all.png)
@@ -227,7 +230,7 @@ function downloadFishImages() {
 downloadFishImages();
 ```
 
-Isn't it nice to have all the fish?
+Isn't it nice to have all the fishes in your bucket?
 
 
 ### Images
