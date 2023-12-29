@@ -99,6 +99,37 @@ The first objective "Holiday Hack Orientation" you can complete it by talk to "J
     Catch twenty different species of fish that live around Geese Islands. When you're done, report your findings to Poinsettia McMittens on the Island of Misfit Toys. Catch at least one of each species of fish that live around Geese islands. When you're done, report your findings to Poinsettia McMittens. [Click](./easter_eggs.md) here.
 
 
+## NPC locations 
+| :fontawesome-solid-person-circle-question: Name           | :material-fireplace-off: Area | :material-island: Island        | :octicons-question-24: Challenge               |
+|----------------|-------|----------------|-------------------------|
+| Jingle Ringford  | Orientation        | Christmas Island   | Orientation |
+| Morcel Nougat | Frosty's Beach      | Christmas Island | Snowball Fight |
+| Ginger Breddie    | Santa's Surf Shack  | Christmas Island | Linux 101 |
+| Noel Boetie           | Rudolph's Rest Resort            | Christmas Island                     |  Reportinator |
+| Sparkle Redberry            |  Rudolph's Rest Resort           | Christmas Island                    | Azure 101 |
+| Garland Candlesticks            |  Squarewheel Yard            | Island of Misfit Toys                     | Luggage Lock  |
+| Rose Mold  |      Ostrich Saloon   |  Island of Misfit Toys  |  Linux PrivEsc |
+| Dusty Giftwrap | Tarnished Trove |  Island of Misfit Toys | Game Cartridges: Vol 1  |
+| Eve Snowshoes | Scaredy Kite Heights | Island of Misfit Toys | Hashcat  |
+| Shifty McShuffles | Chiaroscuro City | Film Noir Island  |  Na'an |
+| Wombley Cube | Chiaroscuro City | Film Noir Island  |  Space Island Door Access Speaker |
+| Tangle Coalbox | Gumshoe Alley PI Office | Film Noir Island   |  KQL Kraken Hunt|
+| Fitzy Shortstack | The Blacklight District | Film Noir Island  | Phish Detection Agency  |
+| Piney Sappington | Rainraster Cliffs  | Pixel Island  |  Elf Hunter |
+| Tinsel Upatree | Driftbit Grotto | Pixel Island  | Game Cartridges Vol 2  |
+| Alabaster Snowball | Rainraster Cliffs |  Pixel Island |  Certificate SSHenanigans |
+| Bow Ninecandle | Brass Bouy Port | Steampunk Island  |  Faster Lock Combination |
+| Angel Candysalt | Rusty Quay | Steampunk Island  | Game Cartridges Vol 3  |
+| Chimney Scissorsticks | Brass Bouy Port |  Steampunk Island |  The Captain's Comms |
+| Ribb Bonbowford | Coggoggle Marina | Steampunk Island  |  Active Directory |
+| Jewel Loggins | Spaceport Point | Space Island  |  Space Island Door Access Speaker |
+| Wombley Cube | Zenith SGS |  Space Island |  Camera Access |
+| Wombley Cube | Zenith SGS |  Space Island |  Missile Diversion  |
+| NanoSat-o-Matic | Zenith SGS |  Space Island |  Missile Diversion  |
+| Poinsettia McMittens| Squarewheel Yard |  Island of Misfit Toys | BONUS! Fishing Guid and Mastery  |
+
+
+
 ## Response
 
 ??? quote "Santa"

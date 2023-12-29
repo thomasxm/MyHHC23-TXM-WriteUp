@@ -43,12 +43,25 @@
 Well, first thing first, where is Jason? 
 
 ![Fishing](../img/misc/jason.png)
-
+![Fishing](../img/misc/jason2.png)
 
 ??? question "Jason"
     Hi, I'm Jason!
     I'm not dead. 
     I'm just soaking up the sun's gnarly vibes, bro!
+
+```
+https://2023.holidayhackchallenge.com/images/notadeadfish_large.png
+https://2023.holidayhackchallenge.com/images/jason.png
+```
+
+
+Can you believe that I was looking into the images for something interesting? Great! I found one: 
+
+```
+https://2023.holidayhackchallenge.com/images/backgrounds/pixel_island_foreground.png
+```
+![Fishing](../img/misc/pixel_island_foreground.png)
 
 ### Fishing 
 User your "three" buttons (Cast Line --> Reel it in --> Reel it in turn red --> Reel it in) to manually fishing 20 fishes, and report back to Poinsettia McMittens to get your 
@@ -267,6 +280,30 @@ Dennis Nedry was a computer programmer at Jurassic Park and a minor antagonist.
 ![WebSocket](../img/misc/easter_eggs.png)
 
 ![WebSocket](../img/misc/area_map.png)
+
+#### Islands
+
+Film Noir refers to a specific genre. Examples of noir films include 'The Black Dahlia' and 'Sin City'. An example of a game in this style is L.A. Noire.
+
+The Island of Misfit Toys' might refer to the film 'Rudolph the Red-Nosed Reindeer & the Island of Misfit Toys'. It is noteworthy that in 'Tarnished Trove' at Misfit Toys Island, the background music is distorted. You will hear sounds like the Windows startup sound, phone interference, internet dial-up, Windows warning messages, and various other sound effects.
+
+'Pixel Island' is a nostalgic name, reminding us that everything was made of pixels in older times.
+
+Steampunk in gaming is a genre that combines historical elements, often from the Victorian era or a similarly industrialized setting, with futuristic technology powered by steam. This genre is characterized by its inventive and often fantastical interpretation of technology, featuring gears, airships, and analog machines, all set in a retro-futuristic world. The visual style often blends old-world elegance with mechanical innovation, creating a unique and immersive experience.
+
+The steampunk games I can think of are: [Final Fantasy 6](https://www.ign.com/wikis/final-fantasy-vi/Walkthrough) and [Bioshock](https://steampunk.fandom.com/wiki/BioShock). 
+
+
+I believe the overall theme of this year is Retro！ 
+
+Speaking about retro games, I used 'Lameboy' to emulate a Game Boy environment on my Nintendo DS. Here it goes: 
+
+![Gameboy](../img/misc/gb3.png)
+![Gameboy](../img/misc/gb4.png)
+![Gameboy](../img/misc/gb5.png)
+
+Classic never dies! 
+
 
 ## Response
 
