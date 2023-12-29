@@ -39,6 +39,7 @@
 
 ## Solution
 
+### Jason 
 Well, first thing first, where is Jason? 
 
 ![Fishing](../img/misc/jason.png)
@@ -49,7 +50,7 @@ Well, first thing first, where is Jason?
     I'm not dead. 
     I'm just soaking up the sun's gnarly vibes, bro!
 
-
+### Fishing 
 User your "three" buttons (Cast Line --> Reel it in --> Reel it in turn red --> Reel it in) to manually fishing 20 fishes, and report back to Poinsettia McMittens to get your 
 fishing mastery challenge! 
 
@@ -241,6 +242,15 @@ Isn't it nice to have all the fishes in your bucket?
 
 !!! success "Answer"
     170 fishes plus a special one!  
+
+#### Websocket: 
+
+‘Oh Hi Mark’, I have to Google to find out this one. Then I realised ```WS_OHHIMARK``` has been in HHC for many years! [Oh Hi Mark](https://www.youtube.com/watch?v=aekfPU0SwNw)
+
+And Chort? 
+
+Under WS_USERS, we can see some weird usernames, interesting...
+
 
 ## Response
 
