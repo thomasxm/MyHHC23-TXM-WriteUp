@@ -245,12 +245,28 @@ Isn't it nice to have all the fishes in your bucket?
 
 #### Websocket: 
 
-‘Oh Hi Mark’, I have to Google to find out this one. Then I realised ```WS_OHHIMARK``` has been in HHC for many years! [Oh Hi Mark](https://www.youtube.com/watch?v=aekfPU0SwNw)
+‘Oh Hi Mark’, I have to Google it to find out this one. Then I realised ```WS_OHHIMARK``` has been in HHC for many years! [Oh Hi Mark](https://www.youtube.com/watch?v=aekfPU0SwNw)
+
+If we check AAANNNDD_SCENE while we are at Rudolph's Rest Resort, 
+
+https://2023.holidayhackchallenge.com/images/fabric/ci-rudolphsrest_floor.png
+
+We can get a area map of the place! The area map can be a perfect tool to make a game guide. 
 
 And Chort? 
 
+OOOH SPARKLY seems to be from The Secret of NIMH. 
+
 Under WS_USERS, we can see some weird usernames, interesting...
 
+Well, when I log off from chrome browser and log in the game from Firefox, I received a new response of type: [DENNIS_NEDRY](https://jurassicpark.fandom.com/wiki/Dennis_Nedry)
+
+Dennis Nedry was a computer programmer at Jurassic Park and a minor antagonist. 
+
+
+![WebSocket](../img/misc/easter_eggs.png)
+
+![WebSocket](../img/misc/area_map.png)
 
 ## Response
 
