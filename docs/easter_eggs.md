@@ -40,7 +40,7 @@
 ## Solution
 
 ### Jason 
-Well, first thing first, where is Jason? 
+Well, first thing first, where is [Jason](https://twitter.com/BanjoCrashland/)? 
 
 ![Fishing](../img/misc/jason.png)
 ![Fishing](../img/misc/jason2.png)
@@ -56,12 +56,29 @@ https://2023.holidayhackchallenge.com/images/jason.png
 ```
 
 
-Can you believe that I was looking into the images for something interesting? Great! I found one: 
+Can you believe that I was looking into the images for something interesting? Great! I found one at Pixel island: 
 
 ```
 https://2023.holidayhackchallenge.com/images/backgrounds/pixel_island_foreground.png
 ```
 ![Fishing](../img/misc/pixel_island_foreground.png)
+
+Where is our turtle? 
+
+```
+https://2023.holidayhackchallenge.com/images/turtles.jpg
+```
+
+![Fishing](../img/misc/turtles2.png)
+
+The [Jack Forest](https://riseoftheguardians.fandom.com/wiki/Jack_Frost_(The_Guardians_of_Childhood)?file=JackFrost-PicBookWJ.jpg) paintings by Andrew Theophilopoulos can be downloaded at: 
+
+```
+for i in $(seq 1 39); do wget "https://2023.holidayhackchallenge.com/images/art/f${i}.png"; done
+```
+![Fishing](../img/misc/jack2.png)
+
+
 
 ### Fishing 
 User your "three" buttons (Cast Line --> Reel it in --> Reel it in turn red --> Reel it in) to manually fishing 20 fishes, and report back to Poinsettia McMittens to get your 
@@ -260,11 +277,13 @@ Isn't it nice to have all the fishes in your bucket?
 
 ‘Oh Hi Mark’, I have to Google it to find out this one. Then I realised ```WS_OHHIMARK``` has been in HHC for many years! [Oh Hi Mark](https://www.youtube.com/watch?v=aekfPU0SwNw)
 
+[AUF_WIEDERSEHEN](https://en.wikipedia.org/wiki/Auf_Wiedersehen,_Pet) means farewell in German. 
+
 If we check AAANNNDD_SCENE while we are at Rudolph's Rest Resort, 
 
 https://2023.holidayhackchallenge.com/images/fabric/ci-rudolphsrest_floor.png
 
-We can get a area map of the place! The area map can be a perfect tool to make a game guide. 
+We can get an area map of the place! The area map can be a perfect tool to make a game guide. 
 
 And Chort? 
 
@@ -280,6 +299,10 @@ Dennis Nedry was a computer programmer at Jurassic Park and a minor antagonist.
 ![WebSocket](../img/misc/easter_eggs.png)
 
 ![WebSocket](../img/misc/area_map.png)
+
+The grid section in websocket contains spaces and 1s. They are the layout of the area map. By modifying the spaces to 1s, you can enter some areas you are not suppose to be in...
+
+![WebSocket](../img/misc/grid1.png)
 
 #### Islands
 
