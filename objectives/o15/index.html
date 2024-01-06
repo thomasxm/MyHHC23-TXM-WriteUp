@@ -18,7 +18,7 @@
       
       
       <link rel="icon" href="../../img/misc/favicon.ico">
-      <meta name="generator" content="mkdocs-1.5.3, mkdocs-material-9.5.3">
+      <meta name="generator" content="mkdocs-1.5.3, mkdocs-material-9.5.2">
     
     
       
@@ -1247,7 +1247,7 @@
         
   
   <span class="md-ellipsis">
-    easter_eggs
+    Easter Eggs
   </span>
   
 
@@ -1325,9 +1325,10 @@ cat /home/kali/.ssh/id_rsa.pub
 We need to copy our certificate to the below server for authentication: </p>
 <p><code>https://northpole-ssh-certs-fa.azurewebsites.net/api/create-cert?code=candy-cane-twirl</code></p>
 <p><img alt="Server" src="../../img/objectives/o15/server1.png" /></p>
-<p>nano openkey.pub  and paste the key only, not the JSON syntax. </p>
+<p><code>nano openkey.pub</code>  and paste the key only, not the JSON syntax. </p>
 <p><code>ssh -i id_rsa -o CertificateFile=openkey.pub monitor@ssh-server-vm.santaworkshopgeeseislands.org</code></p>
-<p>Once you are ssh in. (Ctrl + c)</p>
+<p>Once you ssh in, you will see the interface like below, (Ctrl + c) to enter as monitor</p>
+<p><img alt="Terminal output" src="../../img/objectives/o19/system.png" /></p>
 <p>Hint: get token
 https://learn.microsoft.com/en-us/entra/identity/managed-identities-azure-resources/how-to-use-vm-token</p>
 <p><img alt="pic" src="../../img/objectives/o15/token.png" /></p>

