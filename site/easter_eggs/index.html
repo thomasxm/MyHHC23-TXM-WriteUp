@@ -16,11 +16,11 @@
       
       
       <link rel="icon" href="../img/misc/favicon.ico">
-      <meta name="generator" content="mkdocs-1.5.3, mkdocs-material-9.5.3">
+      <meta name="generator" content="mkdocs-1.5.3, mkdocs-material-9.5.2">
     
     
       
-        <title>easter_eggs - 2023 SANS HHC Write-Up</title>
+        <title>Easter Eggs - 2023 SANS HHC Write-Up</title>
       
     
     
@@ -110,7 +110,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              easter_eggs
+              Easter Eggs
             
           </span>
         </div>
@@ -1174,7 +1174,7 @@
         
   
   <span class="md-ellipsis">
-    easter_eggs
+    Easter Eggs
   </span>
   
 
@@ -1244,14 +1244,48 @@ Go see if you can catch, say, 20 different types of fish!<br/></p>
 <p>There are a variety of strategies for automating repetative website tasks. Tools such as AutoKey and AutoIt allow you to programmatically examine elements on the screen and emulate user inputs.</p>
 </details>
 <h2 id="solution">Solution<a class="headerlink" href="#solution" title="Permanent link">⚓︎</a></h2>
-<p>Well, first thing first, where is Jason? </p>
-<p><img alt="Fishing" src="../img/misc/jason.png" /></p>
+<h3 id="jason">Jason<a class="headerlink" href="#jason" title="Permanent link">⚓︎</a></h3>
+<p>Well, first thing first, where is <a href="https://twitter.com/BanjoCrashland/">Jason</a>? </p>
+<p><img alt="Fishing" src="../img/misc/jason.png" />
+<img alt="Fishing" src="../img/misc/jason2.png" /></p>
 <details class="question">
 <summary>Jason</summary>
 <p>Hi, I'm Jason!
 I'm not dead. 
 I'm just soaking up the sun's gnarly vibes, bro!</p>
 </details>
+<div class="highlight"><pre><span></span><code>https://2023.holidayhackchallenge.com/images/notadeadfish_large.png
+https://2023.holidayhackchallenge.com/images/jason.png
+</code></pre></div>
+<p>Can you believe that I was looking into the images for something interesting? Great! I found one at Pixel island: </p>
+<p><div class="highlight"><pre><span></span><code>https://2023.holidayhackchallenge.com/images/backgrounds/pixel_island_foreground.png
+</code></pre></div>
+<img alt="Fishing" src="../img/misc/pixel_island_foreground.png" /></p>
+<p>Where is our turtle? </p>
+<div class="highlight"><pre><span></span><code>https://2023.holidayhackchallenge.com/images/turtles.jpg
+</code></pre></div>
+<p><img alt="Fishing" src="../img/misc/turtles2.png" /></p>
+<p>The <a href="https://riseoftheguardians.fandom.com/wiki/Jack_Frost_(The_Guardians_of_Childhood)?file=JackFrost-PicBookWJ.jpg">Jack Forest</a> paintings by Andrew Theophilopoulos can be downloaded at: </p>
+<p><div class="highlight"><pre><span></span><code>for i in $(seq 1 39); do wget &quot;https://2023.holidayhackchallenge.com/images/art/f${i}.png&quot;; done
+</code></pre></div>
+<img alt="Fishing" src="../img/misc/jack2.png" /></p>
+<p>In the Access Speaker challenge, we need to "speak" a passphrase to the speaker in order to open the door. </p>
+<details class="poem">
+<summary>Forst Poem</summary>
+<p>And he whispered, 'Now I shall be out of sight;<br/>
+So through the valley and over the height.'<br/>
+And he'll silently take his way.<br/></p>
+</details>
+<p>It is <a href="https://www.poemhunter.com/poem/the-frost/">Forst Poem</a> by Hannah Flagg Gould. Hannah was a 19th-century American poet.  </p>
+<p>Captain's Comms, we can find the following websocket:</p>
+<p><div class="highlight"><pre><span></span><code>{
+  &quot;type&quot;: &quot;HELLO_ENTITY&quot;,
+  &quot;entityType&quot;: &quot;terminal&quot;,
+  &quot;id&quot;: &quot;capcom&quot;
+}
+</code></pre></div>
+Capcom is a Japanese video game company.  </p>
+<h3 id="fishing">Fishing<a class="headerlink" href="#fishing" title="Permanent link">⚓︎</a></h3>
 <p>User your "three" buttons (Cast Line --&gt; Reel it in --&gt; Reel it in turn red --&gt; Reel it in) to manually fishing 20 fishes, and report back to Poinsettia McMittens to get your 
 fishing mastery challenge! </p>
 <p>First open the developer tool, we can find: </p>
@@ -1538,6 +1572,40 @@ downloadFishImages<span class="o">()</span><span class="p">;</span>
 <p class="admonition-title">Answer</p>
 <p>170 fishes plus a special one!  </p>
 </div>
+<h4 id="websocket">Websocket:<a class="headerlink" href="#websocket" title="Permanent link">⚓︎</a></h4>
+<p>‘Oh Hi Mark’, I have to Google it to find out this one. Then I realised <code>WS_OHHIMARK</code> has been in HHC for many years! <a href="https://www.youtube.com/watch?v=aekfPU0SwNw">Oh Hi Mark</a></p>
+<p><a href="https://en.wikipedia.org/wiki/Auf_Wiedersehen,_Pet">AUF_WIEDERSEHEN</a> means farewell in German. </p>
+<p>If we check AAANNNDD_SCENE while we are at Rudolph's Rest Resort, </p>
+<p>https://2023.holidayhackchallenge.com/images/fabric/ci-rudolphsrest_floor.png</p>
+<p>We can get an area map of the place! The area map can be a perfect tool to make a game guide. </p>
+<p>And Chort? </p>
+<p>OOOH SPARKLY seems to be from The Secret of NIMH. </p>
+<p>Under WS_USERS, we can see some weird usernames, interesting...</p>
+<p>Well, when I log off from chrome browser and log in the game from Firefox, I received a new response of type: <a href="https://jurassicpark.fandom.com/wiki/Dennis_Nedry">DENNIS_NEDRY</a></p>
+<p>Dennis Nedry was a computer programmer at Jurassic Park and a minor antagonist. </p>
+<p><img alt="WebSocket" src="../img/misc/easter_eggs.png" /></p>
+<p><img alt="WebSocket" src="../img/misc/area_map.png" /></p>
+<p>The grid section in websocket contains spaces and 1s. They are the layout of the area map. By modifying the spaces to 1s, you can enter some areas you are not suppose to be in...</p>
+<p><img alt="WebSocket" src="../img/misc/grid1.png" /></p>
+<h4 id="islands">Islands<a class="headerlink" href="#islands" title="Permanent link">⚓︎</a></h4>
+<p>Film Noir refers to a specific genre. Examples of noir films include 'The Black Dahlia' and 'Sin City'. An example of a game in this style is L.A. Noire.</p>
+<p>The Island of Misfit Toys' might refer to the film 'Rudolph the Red-Nosed Reindeer &amp; the Island of Misfit Toys'. It is noteworthy that in 'Tarnished Trove' at Misfit Toys Island, the background music is distorted. You will hear sounds like the Windows startup sound, phone interference, internet dial-up, Windows warning messages, and various other sound effects.</p>
+<p>'Pixel Island' is a nostalgic name, reminding us that everything was made of pixels in older times.</p>
+<p>Steampunk in gaming is a genre that combines historical elements, often from the Victorian era or a similarly industrialized setting, with futuristic technology powered by steam. This genre is characterized by its inventive and often fantastical interpretation of technology, featuring gears, airships, and analog machines, all set in a retro-futuristic world. The visual style often blends old-world elegance with mechanical innovation, creating a unique and immersive experience.</p>
+<p>The steampunk games I can think of are: <a href="https://www.ign.com/wikis/final-fantasy-vi/Walkthrough">Final Fantasy 6</a> and <a href="https://steampunk.fandom.com/wiki/BioShock">Bioshock</a>. </p>
+<p>I believe the overall theme of this year is Retro！ </p>
+<h4 id="gameboy-or-nds">GameBoy or NDS?<a class="headerlink" href="#gameboy-or-nds" title="Permanent link">⚓︎</a></h4>
+<p>Speaking about retro games, I used 'Lameboy' to emulate a Game Boy environment on my Nintendo DS. Here it goes: </p>
+<p><img alt="Gameboy" src="../img/misc/gb3.png" />
+<img alt="Gameboy" src="../img/misc/gb4.png" />
+<img alt="Gameboy" src="../img/misc/gb5.png" /></p>
+<p>Classic never dies! </p>
+<h4 id="some-random-stuffs">Some random stuffs<a class="headerlink" href="#some-random-stuffs" title="Permanent link">⚓︎</a></h4>
+<p>Under the js/main folder in developer tool we can find many interesting avatars that were used in previous HHC. They were really interesting.  </p>
+<p><code>https://2023.holidayhackchallenge.com/images/avatars/cyberus.png</code>
+<img alt="avatars" src="../img/misc/cyberus.png" />
+<code>https://2023.holidayhackchallenge.com/images/avatars/trolls/8cf69b0ce8ba414e8f7741dddb785626.png</code>
+<img alt="avatars" src="../img/misc/8cf69b0ce8ba414e8f7741dddb785626.png" /></p>
 <h2 id="response">Response<a class="headerlink" href="#response" title="Permanent link">⚓︎</a></h2>
 <div class="admonition quote">
 <p class="admonition-title">Poinsettia McMittens</p>

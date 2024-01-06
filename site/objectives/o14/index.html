@@ -18,7 +18,7 @@
       
       
       <link rel="icon" href="../../img/misc/favicon.ico">
-      <meta name="generator" content="mkdocs-1.5.3, mkdocs-material-9.5.3">
+      <meta name="generator" content="mkdocs-1.5.3, mkdocs-material-9.5.2">
     
     
       
@@ -890,6 +890,15 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#gloooooooooooory" class="md-nav__link">
+    <span class="md-ellipsis">
+      GLOOOOOOOOOOOORY!
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#response" class="md-nav__link">
     <span class="md-ellipsis">
       Response
@@ -1247,7 +1256,7 @@
         
   
   <span class="md-ellipsis">
-    easter_eggs
+    Easter Eggs
   </span>
   
 
@@ -1328,7 +1337,25 @@ are better than any web tools on this: </p>
 .-.
 -.--
 </code></pre></div>
-<img alt="Terminal output" src="../../img/objectives/o14/morse.png" /></p>
+<img alt="Morse code" src="../../img/objectives/o14/morse.png" /></p>
+<h4 id="2nd-method">2nd method<a class="headerlink" href="#2nd-method" title="Permanent link">⚓︎</a></h4>
+<p>Are you interested in other ways of solving it? Well, we can modify the byte difference, so the magical force will change 'direction'!</p>
+<p>When you open the Gameboy Cartridge 2 from Items, sometimes you get a version of the game where you start off above the trees, and sometimes below the trees.</p>
+<p><img alt="Trees" src="../../img/objectives/o14/vol2.png" /></p>
+<p>The vol2_up.gb ROM above the trees can be downloaded like so: </p>
+<div class="highlight"><pre><span></span><code>curl https://gamegosling.com/vol2-akHB27gg6pN0/rom/game0.gb --output vol2_up.gb
+</code></pre></div>
+<p>The vol2_down.gb ROM below the trees can be downloaded like so: </p>
+<div class="highlight"><pre><span></span><code>curl https://gamegosling.com/vol2-akHB27gg6pN0/rom/game1.gb --output vol2_down.gb
+</code></pre></div>
+<p>We can use utility vbindiff <code>vbindiff vol2_up.gb vol2_down.gb</code> to see the differences between two game ROMs. Locate the difference in one byte just below "You shall not pass" phrase and change that byte as picture below: </p>
+<p><img alt="Trees" src="../../img/objectives/o14/2ndway.png" /></p>
+<p>Then the force that pushes you in the opposite direction will actually guide you in the direction you want.</p>
+<h4 id="3rd-way">3rd way<a class="headerlink" href="#3rd-way" title="Permanent link">⚓︎</a></h4>
+<p>There are even more ways. Just to name another one: if you change the four bytes in vol2_up.gb to the values of the four bytes in vol2_down.gb, you will start at the opposite side of the trees! So, you can enter the whirl without bothering T-Wiz, how wonderful!</p>
+<p><img alt="Trees" src="../../img/objectives/o14/3rdWay.png" /></p>
+<h2 id="gloooooooooooory">GLOOOOOOOOOOOORY!<a class="headerlink" href="#gloooooooooooory" title="Permanent link">⚓︎</a></h2>
+<p><img alt="Glory!" src="../../img/misc/glory.png" /></p>
 <h2 id="response">Response<a class="headerlink" href="#response" title="Permanent link">⚓︎</a></h2>
 <div class="admonition quote">
 <p class="admonition-title">Tinsel Upatree</p>

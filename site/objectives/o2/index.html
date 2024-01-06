@@ -18,7 +18,7 @@
       
       
       <link rel="icon" href="../../img/misc/favicon.ico">
-      <meta name="generator" content="mkdocs-1.5.3, mkdocs-material-9.5.3">
+      <meta name="generator" content="mkdocs-1.5.3, mkdocs-material-9.5.2">
     
     
       
@@ -473,6 +473,15 @@
   <a href="#solution" class="md-nav__link">
     <span class="md-ellipsis">
       Solution
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#gloooooooooooory" class="md-nav__link">
+    <span class="md-ellipsis">
+      GLOOOOOOOOOOOORY!
     </span>
   </a>
   
@@ -1247,7 +1256,7 @@
         
   
   <span class="md-ellipsis">
-    easter_eggs
+    Easter Eggs
   </span>
   
 
@@ -1336,6 +1345,70 @@ I made that up... </p>
 lockPlayerHealth<span class="o">(</span><span class="m">100</span><span class="o">)</span><span class="p">;</span>
 </code></pre></div></td></tr></table></div>
 This script is actually not written by me. The secret is to feed ChatGPT with Java codes and then ask it to write you a Java script that runs in developer console that does what you need it to do.</p>
+<h4 id="single-mode">Single mode?<a class="headerlink" href="#single-mode" title="Permanent link">⚓︎</a></h4>
+<p><div class="highlight"><pre><span></span><code>// jared ... I mean Elf the dwarf joins the fight when in single player mode
+</code></pre></div>
+This is a line you can see from Java source code in developer mode. </p>
+<div class="highlight"><pre><span></span><code>(function() {
+  // Check if the necessary objects and functions are available
+  if (typeof singlePlayer !== &#39;undefined&#39; &amp;&amp; typeof gameSceneObject !== &#39;undefined&#39;) {
+    // Forcefully set singlePlayer to &#39;true&#39;
+    singlePlayer = &#39;true&#39;;
+
+    // Restart the game scene to apply changes
+    gameSceneObject.scene.restart();
+
+    // After restarting, set singlePlayer to &#39;true&#39; again to ensure it is set correctly
+    setTimeout(() =&gt; {
+      singlePlayer = &#39;true&#39;;
+      console.log(&#39;Switched to single-player mode.&#39;);
+    }, 1000); // Adjust delay as needed based on your game&#39;s scene initialization time
+
+  } else {
+    console.error(&#39;Required objects or variables not found. Please ensure this script is run within the correct context.&#39;);
+  }
+})();
+</code></pre></div>
+<p>If you join a random game and put the above code in developer console, you will have Jared joins the fight: </p>
+<p>Never fear, elfs the dwarf is here! </p>
+<p>Can you be both an elf and a dwarf? </p>
+<p><img alt="Jared" src="../../img/objectives/o2/jared.png" /></p>
+<p>OR you can play the real single mode by put the following into console: </p>
+<div class="tabbed-set tabbed-alternate" data-tabs="1:2"><input checked="checked" id="__tabbed_1_1" name="__tabbed_1" type="radio" /><input id="__tabbed_1_2" name="__tabbed_1" type="radio" /><div class="tabbed-labels"><label for="__tabbed_1_1"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M0 0h24v24H0V0zm22.034 18.276c-.175-1.095-.888-2.015-3.003-2.873-.736-.345-1.554-.585-1.797-1.14-.091-.33-.105-.51-.046-.705.15-.646.915-.84 1.515-.66.39.12.75.42.976.9 1.034-.676 1.034-.676 1.755-1.125-.27-.42-.404-.601-.586-.78-.63-.705-1.469-1.065-2.834-1.034l-.705.089c-.676.165-1.32.525-1.71 1.005-1.14 1.291-.811 3.541.569 4.471 1.365 1.02 3.361 1.244 3.616 2.205.24 1.17-.87 1.545-1.966 1.41-.811-.18-1.26-.586-1.755-1.336l-1.83 1.051c.21.48.45.689.81 1.109 1.74 1.756 6.09 1.666 6.871-1.004.029-.09.24-.705.074-1.65l.046.067zm-8.983-7.245h-2.248c0 1.938-.009 3.864-.009 5.805 0 1.232.063 2.363-.138 2.711-.33.689-1.18.601-1.566.48-.396-.196-.597-.466-.83-.855-.063-.105-.11-.196-.127-.196l-1.825 1.125c.305.63.75 1.172 1.324 1.517.855.51 2.004.675 3.207.405.783-.226 1.458-.691 1.811-1.411.51-.93.402-2.07.397-3.346.012-2.054 0-4.109 0-6.179l.004-.056z"/></svg></span> java</label><label for="__tabbed_1_2"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m12 2 10 6c0 4-2 6-6 7l-3-5-4-4 3-4M4.11 19.84l-1.99-1.51L9.19 9 11 10.81l-6.89 9.03Z"/></svg></span> Jared</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<div class="highlight"><pre><span></span><code>function switchToSinglePlayer() {
+  var currentUrl = new URL(window.location.href);
+
+  // Set the &#39;singlePlayer&#39; parameter to &#39;true&#39;
+  currentUrl.searchParams.set(&#39;singlePlayer&#39;, &#39;true&#39;);
+
+  // Update the URL without reloading the page
+  window.history.replaceState({}, &#39;&#39;, currentUrl);
+
+  // Close the current WebSocket connection
+  if (ws &amp;&amp; ws.readyState === WebSocket.OPEN) {
+    ws.close();
+  }
+
+  // Optional: Refresh the page to reinitialize the game
+  location.reload();
+}
+
+// Call this function to switch to single-player mode
+switchToSinglePlayer();
+</code></pre></div>
+</div>
+<div class="tabbed-block">
+<p><img alt="Jared" class="border" src="../../img/objectives/o2/jared_talking_sprite_sheet.png" /></p>
+</div>
+</div>
+</div>
+<p><code>https://2023.holidayhackchallenge.com/?singlePlayer=true</code></p>
+<p>Do you like the sound of Elf the Dwarf? Well, upon checking the src from Elements tab in developer console, I found the following URL link to our media file:</p>
+<p><a href="https://hhc23-snowball.holidayhackchallenge.com/hhc23_snowball_elf_much_glory.mp3">Much glory!</a></p>
+<p><a href="https://hhc23-snowball.holidayhackchallenge.com/elf_the_dwarf_is_here.mp3">Elf the Dwarf is here!</a></p>
+<h2 id="gloooooooooooory">GLOOOOOOOOOOOORY!<a class="headerlink" href="#gloooooooooooory" title="Permanent link">⚓︎</a></h2>
 <p>There are more than one way to complete this challenge. </p>
 <h3 id="images">Images<a class="headerlink" href="#images" title="Permanent link">⚓︎</a></h3>
 <p><img alt="Terminal output" src="../../img/misc/snowball.png" /></p>

@@ -78,6 +78,25 @@ for i in $(seq 1 39); do wget "https://2023.holidayhackchallenge.com/images/art/
 ```
 ![Fishing](../img/misc/jack2.png)
 
+In the Access Speaker challenge, we need to "speak" a passphrase to the speaker in order to open the door. 
+
+??? Poem "Forst Poem"
+    And he whispered, 'Now I shall be out of sight;<br/>
+    So through the valley and over the height.'<br/>
+    And he'll silently take his way.<br/>
+
+It is [Forst Poem](https://www.poemhunter.com/poem/the-frost/) by Hannah Flagg Gould. Hannah was a 19th-century American poet.  
+
+Captain's Comms, we can find the following websocket:
+
+```
+{
+  "type": "HELLO_ENTITY",
+  "entityType": "terminal",
+  "id": "capcom"
+}
+```
+Capcom is a Japanese video game company.  
 
 
 ### Fishing 
@@ -319,6 +338,8 @@ The steampunk games I can think of are: [Final Fantasy 6](https://www.ign.com/wi
 
 I believe the overall theme of this year is Retro！ 
 
+#### GameBoy or NDS?
+
 Speaking about retro games, I used 'Lameboy' to emulate a Game Boy environment on my Nintendo DS. Here it goes: 
 
 ![Gameboy](../img/misc/gb3.png)
@@ -327,6 +348,15 @@ Speaking about retro games, I used 'Lameboy' to emulate a Game Boy environment o
 
 Classic never dies! 
 
+
+#### Some random stuffs
+
+Under the js/main folder in developer tool we can find many interesting avatars that were used in previous HHC. They were really interesting.  
+
+```https://2023.holidayhackchallenge.com/images/avatars/cyberus.png```
+![avatars](../img/misc/cyberus.png)
+```https://2023.holidayhackchallenge.com/images/avatars/trolls/8cf69b0ce8ba414e8f7741dddb785626.png```
+![avatars](../img/misc/8cf69b0ce8ba414e8f7741dddb785626.png)
 
 ## Response
 
