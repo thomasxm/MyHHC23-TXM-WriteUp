@@ -87,6 +87,13 @@ In the Access Speaker challenge, we need to "speak" a passphrase to the speaker 
 
 It is [Forst Poem](https://www.poemhunter.com/poem/the-frost/) by Hannah Flagg Gould. Hannah was a 19th-century American poet.  
 
+One more thing about Jack, Jack is moving inside the ejection pod!
+
+![Jack](../img/objectives/o21/Jack.png)
+![Jack](../img/misc/Jack3.png)
+![Jack](../img/misc/Jack5.png)
+![Jack](../img/misc/Jack4.png)
+
 Captain's Comms, we can find the following websocket:
 
 ```
